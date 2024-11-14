@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+    <title>Contact Us - Company Overview</title>
+    <style>
+
+
+
+
+        .hero-section-contact {
+            background-image: url('https://www.canadianrealestatemagazine.ca/wp-content/uploads/2023/10/invest-in-commercial-real-estate-in-Toronto.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            height: 85vh;
+            margin: 20px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-section-contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 20px;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.526); /* Dark overlay */
+        }
+        
+        .hero-section-contact .hero-content {
+            position: relative;
+            z-index: 1;
+            background-color: rgba(128, 255, 0, 0);
+            max-width: 600px;
+            padding: 20px;
+        }
+        
+        .hero-section-contact .hero-content h1 {
+            font-size: 3.2em;
+            margin-bottom: 10px;
+            background-color: rgba(128, 255, 0, 0);
+        }
+        
+        .hero-section-contact .hero-content p {
+            font-size: 1em;
+            background-color: rgba(128, 255, 0, 0);
+            margin-bottom: 20px;
+        }
+        
+        .hero-section-contact .hero-button {
+            padding: 12px 30px;
+            background-color: #D9A77D;
+            color: #E0E0E0;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .hero-section-contact .hero-button:hover {
+            background-color: #7F5539;
+        }
+
+
+
+
+
+
+
+
+
+
+        /* Contact Information Section */
+.contact-info {
+    background-color: #121212;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 40px auto;
+    max-width: 70%;
+}
+
+.contact-info h2 {
+    font-size: 3.2em;
+    color: #ffffff;
+    margin-bottom: 50px;
+}
+
+.info-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.info-item {
+    background-color: #121212;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+}
+
+.info-item i {
+    font-size: 2.0em;
+    color: #D9A77D;
+    margin-bottom: 10px;
+}
+
+.info-item h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.info-item p {
+    font-size: 0.9em;
+    color: #555;
+    margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .info-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-item {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contact-form-section {
+    display: flex;
+    justify-content: center;
+    padding: 50px 30px;
+    background-color: #121212;
+}
+
+.contact-form-section .form-container {
+    display: flex;
+    max-width: 1000px;
+    background-color: #1F1F1F;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.contact-form-section .image-content {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1F1F1F;
+    color: #000000;
+    padding: 40px;
+}
+
+.contact-form-section .contact-image {
+    width: 100%;
+    border-radius: 10px;
+    height: auto;
+    object-fit: cover;
+}
+
+.contact-form-section .image-text {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact-form-section .image-text h2 {
+    font-size: 3.2em;
+    color: #fff;
+    background-color: #1F1F1F;
+}
+
+.contact-form-section .image-text p {
+    font-size: 1em;
+    background-color: #1F1F1F;
+    color: #d0d0d0;
+}
+
+.contact-form-section .contact-form {
+    flex: 1;
+    padding: 40px;
+    background-color: #121212;
+    display: flex;
+    margin: 10px;
+    border-radius: 15px;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.contact-form-section .contact-form h2 {
+    font-size: 2.5em;
+    color: #ffffff;
+}
+
+.contact-form-section .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form-section .form-group label {
+    font-size: 1em;
+    color: #bbbbbb;
+    margin-bottom: 5px;
+}
+
+.contact-form-section .form-group input,
+.contact-form-section .form-group textarea {
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #424242;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form-section .form-group input:focus,
+.contact-form-section .form-group textarea:focus {
+    border-color: #A65D3A;
+}
+
+.contact-form-section .submit-button {
+    padding: 12px 20px;
+    background-color: #A65D3A;
+    color: #E0E0E0;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form-section .submit-button:hover {
+    background-color: #C27D52;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-form-section .form-container {
+        flex-direction: column;
+    }
+
+    .contact-form-section .image-content, .contact-form-section .contact-form {
+        padding: 20px;
+    }
+
+    .contact-form-section .image-text h2 {
+        font-size: 1.6em;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Customer Support Section */
+.customer-support {
+    background-color: #121212;
+    padding: 100px 20px;
+    text-align: center;
+    border-radius: 8px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.customer-support h2 {
+    font-size: 3.2em;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.customer-support p {
+    font-size: 1.1em;
+    color: #b8b8b8;
+    margin-bottom: 40px;
+}
+
+.support-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.support-item {
+    background-color: #1f1f1f;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.support-item h3 {
+    font-size: 1.5em;
+    background-color: #1f1f1f;
+    color: #D9A77D;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.support-item p {
+    font-size: 1em;
+    color: #cbcbcb;
+    background-color: #1f1f1f;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.support-buttons {
+    display: flex;
+    flex-direction: column;
+    background-color: #1f1f1f;
+    gap: 10px;
+}
+
+.support-button {
+    padding: 12px 20px;
+    color: #ffffff;
+    background-color: #00000052;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.live-button {
+    padding: 12px 20px;
+    color: #E0E0E0;
+    background-color: #7F5539;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.support-button:hover {
+    background-color: #7F5539;
+}
+.live-button:hover {
+    background-color: #51331f;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .support-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .newsletter-subscribe {
+            background-color: #51331f;
+            color: #ffffff;
+            padding: 60px 20px;
+            text-align: center;
+            margin: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .newsletter-subscribe h2 {
+            background-color: #51331f;
+            font-size: 3.2em;
+            margin-bottom: 15px;
+        }
+        
+        .subscribe-text {
+            font-size: 1.2em;
+            background-color: #51331f;
+            margin-bottom: 30px;
+        }
+        
+        #subscribe-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            max-width: 500px;
+            background-color: #51331f;
+            margin: 0 auto;
+        }
+        
+        #subscriber-email {
+            flex: 1;
+            padding: 15px;
+            font-size: 1em;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+        
+        .subscribe-button {
+            padding: 15px 25px;
+            background-color: #ffffff;
+            color: #D9A77D;
+            font-size: 1em;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .subscribe-button:hover {
+            background-color: #e6e6e6;
+            color: #7F5539;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            #subscribe-form {
+                flex-direction: column;
+            }
+            
+            #subscriber-email, .subscribe-button {
+                width: 100%;
+            }
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            background-color: #121212;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Poppins';
+        }
+
+
+
+
+
+
+
+
+/* Navbar Container */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: #1e1e1e;
+    color: #fff;
+    margin: 20px;
+    border-radius: 10px;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* Brand Logo */
+.navbar-brand img {
+    max-height: 80px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    transform: none;
+}
+
+/* Desktop Navigation Links */
+.navbar-links {
+    margin-right: 20px;
+    padding: 20px;
+    background-color: transparent;
+}
+
+.navbar-links ul {
+    list-style: none;
+    display: flex;
+    background-color: transparent;
+    gap: 35px;
+}
+
+.navbar-links ul li {
+    position: relative;
+    background-color: transparent;
+}
+
+.navbar-links ul li a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    background-color: transparent;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-links ul li a:hover {
+    color: #ff6f61;
+}
+
+.navbar-links ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ff6f61;
+    transition: width 0.3s ease;
+}
+
+.navbar-links ul li a:hover::after {
+    width: 100%;
+}
+
+/* Mobile Menu Icon */
+.navbar-menu-icon {
+    display: none;
+    font-size: 1.8em;
+    color: #9C6644;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu-icon:hover {
+    color: #ff6f61;
+}
+
+/* Mobile Menu and Overlay */
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    z-index: 90;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-overlay.open {
+    display: block;
+    opacity: 1;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 270px;
+    height: 100vh;
+    background: #1e1e1e;
+    color: #fff;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-menu.open {
+    transform: translateX(0);
+}
+
+.mobile-menu ul {
+    list-style: none;
+    text-align: center;
+}
+
+.mobile-menu ul li {
+    margin: 20px 0;
+}
+
+.mobile-menu ul li a {
+    color: #ddd;
+    font-size: 1.3em;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu ul li a:hover {
+    color: #ff6f61;
+}
+
+/* Smooth Open Animation */
+.mobile-menu.open ul li {
+    animation: slideIn 0.5s ease forwards;
+}
+
+/* Keyframes for Slide Animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Styling for Mobile */
+@media (max-width: 426px) {
+    .navbar-links {
+        display: none;
+    }
+    .navbar-menu-icon {
+        display: block;
+    }
+
+    .navbar-brand img {
+        max-height: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+    }
+    .navbar-menu-icon {
+        display: block;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+    background: url('6.png') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    padding: 40px 20px;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.632); /* Darker overlay for readability */
+    z-index: 1;
+}
+
+.footer-overlay, .footer-links, .footer-contact, .footer-newsletter {
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    background-color: rgba(255, 0, 0, 0); /* Transparent background for content box */
+    border-radius: 10px;
+}
+
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 15px;
+
+}
+
+.footer-brand {
+    flex: 1;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.footer-brand img {
+    max-width: 60%;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.footer-brand h2 {
+    font-size: 1.8em;
+    color: #fff;
+    margin-bottom: 10px;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.footer-brand p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    background-color: transparent;
+}
+
+.social-icons {
+    margin-top: 15px;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.social-icons a {
+    font-size: 1.5em;
+    background-color: rgba(255, 0, 0, 0);
+    color: #fff;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #9C6644;
+}
+
+.footer-links h3, .footer-contact h3, .footer-newsletter h3 {
+    color: #fff;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.footer-newsletter p {
+    background-color: rgba(255, 0, 0, 0);
+    margin: 5px 0;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    background-color: rgba(255, 0, 0, 0);
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin: 8px 0;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    background-color: rgba(255, 0, 0, 0); 
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #9C6644;
+}
+
+.footer-contact p {
+    color: #fff;
+    background-color: rgba(255, 0, 0, 0); 
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact p i {
+    margin-right: 10px;
+    color: #9C6644;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-newsletter form {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-newsletter input[type="email"] {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-newsletter button {
+    padding: 10px 20px;
+    background-color: #9C6644;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer-newsletter button:hover {
+    background-color: #fff;
+    color: #9C6644;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 0.9em;
+    background-color: rgba(255, 0, 0, 0); 
+    color: #ccc;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 2;
+}
+
+.footer-bottom a {
+    color: #9C6644;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-bottom p {
+    
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-bottom a:hover {
+    color: #fff;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+    .footer-brand, .footer-links, .footer-contact, .footer-newsletter {
+        margin: 10px 0;
+    }
+
+    .footer-brand img {
+        max-width: 70%;
+        background-color: rgba(255, 0, 0, 0);
+    }
+}
+
+@media (max-width: 426px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+    .footer-brand, .footer-links, .footer-contact, .footer-newsletter {
+        margin: 10px 0;
+    }
+
+    .footer-brand img {
+        max-width: 100%;
+        background-color: rgba(255, 0, 0, 0);
+    }
+}
+
+
+    </style>
+</head>
+<header class="navbar">
+    <!-- Brand Logo -->
+    <div class="navbar-brand">
+        <a href="index.html">
+            <img src="logo.png" alt="Real Estate Logo">
+        </a>
+    </div>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="navbar-links">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="listing.html">Listings</a></li>
+            <li><a href="process.html">Process</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="testimonial.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hamburger Icon for Mobile Menu -->
+    <div class="navbar-menu-icon" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Mobile Menu with Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+            <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+            <li><a href="listing.html" onclick="toggleMenu()">Listings</a></li>
+            <li><a href="process.html" onclick="toggleMenu()">Process</a></li>
+            <li><a href="blog.html" onclick="toggleMenu()">Blog</a></li>
+            <li><a href="testimonial.html" onclick="toggleMenu()">Testimonials</a></li>
+            <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li>
+        </ul>
+    </div>
+</header>
+
+
+
+
+<section class="hero-section-contact">
+    <div class="hero-content">
+        <h1>Contact Us</h1>
+        <p>We’re here to help! Reach out to us for any inquiries or assistance.</p>
+        <button class="hero-button" onclick="scrollToContactForm()">Get in Touch</button>
+    </div>
+</section>
+
+<!-- Placeholder for Contact Form Section -->
+<section id="contact-form-section">
+    <!-- Contact form will go here -->
+</section>
+
+<section class="contact-info">
+    <h2>Contact Info</h2>
+    <div class="info-container">
+        <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Address</h3>
+            <p>435 Wilson Avenue, Kitchener, Ontario</p>
+        </div>
+        
+        <div class="info-item">
+            <i class="fas fa-phone-alt"></i>
+            <h3>Phone</h3>
+            <p>+1 (647) 409-6236</p>
+        </div>
+        
+        <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <h3>Email</h3>
+            <p>info@Cartographer.com</p>
+        </div>
+        
+        <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <h3>Office Hours</h3>
+            <p>Mon - Fri: 9:00 AM - 5:00 PM</p>
+            <p>Sat: 10:00 AM - 2:00 PM</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="contact-form-section">
+    <div class="form-container">
+        <div class="image-content">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczOymIG6-pgpqZXTKtcV7dF1sj480xgs8O9-Ksqq3-HpAf1znWHhhY6fyFiQCJZ8mKOLuIGABiRbDe44ctTiJo5h_biadBzUR8PNXzMVdCmMlAClypK8=w1200" alt="Beautiful Modern Property" class="contact-image">
+            <div class="image-text">
+                <h2>Get in Touch</h2>
+                <p>Looking to find your dream home or have questions about our listings? Our team is here to help!</p>
+            </div>
+        </div>
+        
+        <form class="contact-form" id="contactForm" onsubmit="return validateForm()">
+            <h2>Contact Us</h2>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+</section>
+
+<section class="customer-support">
+    <h2>Customer Support</h2>
+    <p>Need assistance? Our dedicated support and sales teams are here to help you!</p>
+    
+    <div class="support-container">
+        <!-- Support Team -->
+        <div class="support-item">
+            <h3>Technical Support</h3>
+            <p>For help with products and troubleshooting, contact our support team.</p>
+            <div class="support-buttons">
+                <a href="tel:+1234567890" class="support-button">Call Support</a>
+                <a href="mailto:support@company.com" class="support-button">Email Support</a>
+                <button class="live-button" onclick="startLiveChat()">Live Chat</button>
+            </div>
+        </div>
+
+        <!-- Sales Team -->
+        <div class="support-item">
+            <h3>Sales Team</h3>
+            <p>Interested in our products? Contact our sales team for more information.</p>
+            <div class="support-buttons">
+                <a href="tel:+1234567891" class="support-button">Call Sales</a>
+                <a href="mailto:sales@company.com" class="support-button">Email Sales</a>
+                <button class="live-button" onclick="startLiveChat()">Live Chat</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section class="newsletter-subscribe">
+        <h2>Stay Updated!</h2>
+        <p class="subscribe-text">Subscribe to our newsletter to receive the latest blog posts, updates, and exclusive content directly to your inbox.</p>
+        <form id="subscribe-form">
+            <input type="email" id="subscriber-email" placeholder="Enter your email address" required>
+            <button type="submit" class="subscribe-button">Subscribe</button>
+        </form>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-overlay">
+            <div class="footer-content">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <img src="8.png" alt="Company Logo" class="footer-logo">
+                    <h2>Cartographer Realty</h2>
+                    <p>Your gateway to finding exceptional properties. Discover unique listings and investment opportunities tailored just for you.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+    
+            <!-- Links Section -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="listing.html">Listing</a></li>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="testimonial.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+    
+                <!-- Contact Info Section -->
+                <div class="footer-contact">
+                    <h3>Get In Touch</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 1234 Elm Street, Springfield, IL 62704</p>
+                    <p><i class="fas fa-phone-alt"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@cartographerrealty.com</p>
+                </div>
+    
+                <!-- Newsletter Section -->
+                <div class="footer-newsletter">
+                    <h3>Stay Connected</h3>
+                    <p>Subscribe to our newsletter for the latest property listings, market insights, and exclusive offers.</p>
+                    <form action="#">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Cartographer Realty. All rights reserved. | <a href="#privacy">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+
+    
+    
+    
+    
+
+
+
+    <script>
+
+
+        // Scroll to Contact Form Section
+function scrollToContactForm() {
+    document.getElementById("contact-form-section").scrollIntoView({ behavior: "smooth" });
+}
+
+// Validate Form Fields
+function validateForm() {
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !subject || !message) {
+        alert("Please fill out all fields.");
+        return false;
+    }
+
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!email.match(emailPattern)) {
+        alert("Please enter a valid email address.");
+        return false;
+    }
+
+    alert("Thank you for reaching out! We'll get back to you soon.");
+    return true;
+}
+
+
+// Toggle Mobile Menu
+function toggleMenu() {
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileOverlay = document.getElementById("mobileOverlay");
+    mobileMenu.classList.toggle("open");
+    mobileOverlay.classList.toggle("open");
+}
+
+
+
+// Function to start a live chat
+function startLiveChat() {
+    alert("Connecting you to our live chat...");
+    // Add your live chat initiation code here
+}
+
+
+    </script>
+
+
+</body>
+</html>

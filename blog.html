@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>About Us - Company Overview</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            background-color: #121212;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Poppins';
+        }
+
+
+
+
+
+
+
+
+/* Navbar Container */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: #1e1e1e;
+    color: #fff;
+    margin: 20px;
+    border-radius: 10px;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* Brand Logo */
+.navbar-brand img {
+    max-height: 80px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    transform: none;
+}
+
+/* Desktop Navigation Links */
+.navbar-links {
+    margin-right: 20px;
+    padding: 20px;
+    background-color: transparent;
+}
+
+.navbar-links ul {
+    list-style: none;
+    display: flex;
+    background-color: transparent;
+    gap: 35px;
+}
+
+.navbar-links ul li {
+    position: relative;
+    background-color: transparent;
+}
+
+.navbar-links ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    background-color: transparent;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-links ul li a:hover {
+    color: #ff6f61;
+}
+
+.navbar-links ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ff6f61;
+    transition: width 0.3s ease;
+}
+
+.navbar-links ul li a:hover::after {
+    width: 100%;
+}
+
+/* Mobile Menu Icon */
+.navbar-menu-icon {
+    display: none;
+    font-size: 1.8em;
+    color: #9C6644;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu-icon:hover {
+    color: #ff6f61;
+}
+
+/* Mobile Menu and Overlay */
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    z-index: 90;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-overlay.open {
+    display: block;
+    opacity: 1;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 270px;
+    height: 100vh;
+    background: #1e1e1e;
+    color: #fff;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-menu.open {
+    transform: translateX(0);
+}
+
+.mobile-menu ul {
+    list-style: none;
+    text-align: center;
+}
+
+.mobile-menu ul li {
+    margin: 20px 0;
+}
+
+.mobile-menu ul li a {
+    color: #ddd;
+    font-size: 1.3em;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu ul li a:hover {
+    color: #ff6f61;
+}
+
+/* Smooth Open Animation */
+.mobile-menu.open ul li {
+    animation: slideIn 0.5s ease forwards;
+}
+
+/* Keyframes for Slide Animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Styling for Mobile */
+@media (max-width: 426px) {
+    .navbar-links {
+        display: none;
+    }
+    .navbar-menu-icon {
+        display: block;
+    }
+
+    .navbar-brand img {
+        max-height: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+    }
+    .navbar-menu-icon {
+        display: block;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+    background: url('6.png') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    padding: 40px 20px;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.632); /* Darker overlay for readability */
+    z-index: 1;
+}
+
+.footer-overlay, .footer-links, .footer-contact, .footer-newsletter {
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    background-color: rgba(255, 0, 0, 0); /* Transparent background for content box */
+    border-radius: 10px;
+}
+
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 15px;
+
+}
+
+.footer-brand {
+    flex: 1;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.footer-brand img {
+    max-width: 60%;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.footer-brand h2 {
+    font-size: 1.8em;
+    color: #fff;
+    margin-bottom: 10px;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.footer-brand p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    background-color: transparent;
+}
+
+.social-icons {
+    margin-top: 15px;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.social-icons a {
+    font-size: 1.5em;
+    background-color: rgba(255, 0, 0, 0);
+    color: #fff;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #9C6644;
+}
+
+.footer-links h3, .footer-contact h3, .footer-newsletter h3 {
+    color: #fff;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.footer-newsletter p {
+    background-color: rgba(255, 0, 0, 0);
+    margin: 5px 0;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    background-color: rgba(255, 0, 0, 0);
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin: 8px 0;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    background-color: rgba(255, 0, 0, 0); 
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #9C6644;
+}
+
+.footer-contact p {
+    color: #fff;
+    background-color: rgba(255, 0, 0, 0); 
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact p i {
+    margin-right: 10px;
+    color: #9C6644;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-newsletter form {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-newsletter input[type="email"] {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-newsletter button {
+    padding: 10px 20px;
+    background-color: #9C6644;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer-newsletter button:hover {
+    background-color: #fff;
+    color: #9C6644;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 0.9em;
+    background-color: rgba(255, 0, 0, 0); 
+    color: #ccc;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 2;
+}
+
+.footer-bottom a {
+    color: #9C6644;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-bottom p {
+    
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-bottom a:hover {
+    color: #fff;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+    .footer-brand, .footer-links, .footer-contact, .footer-newsletter {
+        margin: 10px 0;
+    }
+
+    .footer-brand img {
+        max-width: 70%;
+        background-color: rgba(255, 0, 0, 0);
+    }
+}
+
+@media (max-width: 426px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+    .footer-brand, .footer-links, .footer-contact, .footer-newsletter {
+        margin: 10px 0;
+    }
+
+    .footer-brand img {
+        max-width: 100%;
+        background-color: rgba(255, 0, 0, 0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        .featured-article {
+            background-color: #121212;
+            padding: 0px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+            max-width: 100%;
+            margin: 20px auto;
+        }
+        
+        .article-image-container {
+            flex: 1 1 50%;
+        }
+        
+        .article-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .article-content {
+            flex: 1 1 50%;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .article-content h2 {
+            font-size: 3.2em;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+        
+        .article-summary {
+            font-size: 1.1em;
+            color: #cbcbcb;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .article-meta {
+            font-size: 0.9em;
+            color: #d5d5d5;
+            margin-bottom: 20px;
+        }
+        
+        .read-more-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #D9A77D;
+            color: #ffffff;
+            font-size: 1em;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .read-more-button:hover {
+            background-color: #7F5539;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .featured-article {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .article-content {
+                padding: 0;
+            }
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .latest-posts {
+            background-color: #121212;
+            padding: 100px 20px;
+            text-align: center;
+            width: 100%;
+            margin: 20px auto;
+        }
+        
+        .latest-posts h2 {
+            font-size: 3.2em;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        
+        .latest-posts .posts-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            width: 100%;
+        }
+        
+        .latest-posts .post-card {
+            background-color: #121212;
+            border-radius: 10px;
+            max-width: 300px;
+            width: 100%;
+            text-align: left;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .latest-posts .post-card:hover {
+            transform: none;
+        }
+        
+        .latest-posts .post-image {
+            width: 97%;
+            height: 200px;
+            margin: 5px;
+            border-radius: 10px
+        }
+        
+        .latest-posts .post-content {
+            padding: 20px;
+        }
+        
+        .latest-posts .post-content h3 {
+            font-size: 1.5em;
+            color: #e3e3e3;
+            margin-bottom: 10px;
+        }
+        
+        .latest-posts .post-date {
+            font-size: 0.9em;
+            color: #858585;
+            background-color: #12121200;
+            margin-bottom: 10px;
+        }
+        
+        .latest-posts .post-summary {
+            font-size: 1em;
+            color: #a6a6a6;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .latest-posts .read-more-link {
+            display: inline-block;
+            font-size: 1em;
+            color: #D9A77D;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        .latest-posts .read-more-link:hover {
+            color: #7F5539;
+            transform: scale(1.05);
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .categories-section {
+            background-color: #1F1F1F;
+            padding: 100px 20px;
+            text-align: center;
+            margin: 20px;
+            border-radius: 20px;
+        }
+        
+        .categories-section h2 {
+            font-size: 3.2em;
+            color: #ffffff;
+            margin-bottom: 20px;
+            background-color: #1F1F1F;
+        }
+        
+        .categories-container {
+            display: flex;
+            background-color: #1F1F1F;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            width: 100%;
+        }
+        
+        .category-card {
+            background-color: #121212;
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 250px;
+            width: 100%;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .category-card h3 {
+            font-size: 1.5em;
+            color: #D9A77D;
+            margin-bottom: 10px;
+        }
+        
+        .category-card p {
+            font-size: 1em;
+            color: #c9c9c9;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .category-link {
+            display: inline-block;
+            font-size: 1em;
+            color: #D9A77D;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        .category-link:hover {
+            color: #7F5539;
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .recommended-posts {
+            background-color: #121212;
+            padding: 60px 20px;
+            text-align: center;
+            width: 100%;
+            margin: 20px auto;
+        }
+        
+        .recommended-posts h2 {
+            font-size: 3.2em;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        
+        .masonry-grid {
+            column-count: 3;
+            column-gap: 20px;
+            width: 100%;
+        }
+        
+        .masonry-item {
+            background-color: #1F1F1F;
+            margin-bottom: 20px;
+            display: inline-block;
+            text-align: left;
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .masonry-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .post-image {
+            width: 95%;
+            height: 200px;
+            border-radius: 5px;
+            height: auto;
+        }
+        
+        .masonry-item h3 {
+            font-size: 1.3em;
+            color: #ffffff;
+            background-color: #1F1F1F;
+            padding: 15px 10px 5px;
+            margin: 0;
+        }
+        
+        .post-summary {
+            font-size: 1em;
+            background-color: #1F1F1F;
+            color: #e7e7e7;
+            line-height: 1.6;
+            padding: 0 10px 10px;
+            margin: 0;
+        }
+        
+        .read-more-link {
+            display: block;
+            font-size: 1em;
+            color: #D9A77D;
+            background-color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            transition: color 0.3s ease;
+        }
+        
+        .read-more-link:hover {
+            color: #D9A77D;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .masonry-grid {
+                column-count: 1;
+            }
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .popular-posts{
+            background-color: #1F1F1F;
+            padding: 100px 20px;
+            text-align: center;
+            border-radius: 20px;
+            margin: 20px;
+        }
+
+        .comments-section {
+            background-color: #121212;
+            padding: 60px 20px;
+            text-align: center;
+            width: 100%;
+            margin: 20px auto;
+        }
+        
+        .popular-posts h2, .comments-section h2 {
+            font-size: 3.2em;
+            color: #ffffff;
+            margin-bottom: 20px;
+            background-color: #1F1F1F;
+        }
+        
+        .popular-posts-grid {
+            display: flex;
+            background-color: #1F1F1F;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .post-card {
+            background-color: #1F1F1F;
+            border-radius: 10px;
+            max-width: 300px;
+            width: 100%;
+            text-align: left;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .post-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .post-image {
+            width: 93%;
+            margin: 10px;
+            height: auto;
+        }
+        
+        .post-content {
+            padding: 15px;
+            background-color: #1F1F1F;
+        }
+        
+        .post-content h3 {
+            font-size: 1.5em;
+            color: #ffffff;
+            background-color: #1F1F1F;
+            margin-bottom: 10px;
+        }
+        
+        .post-summary {
+            font-size: 1em;
+            color: #c5c5c5;
+            margin-bottom: 15px;
+            background-color: #1F1F1F;
+        }
+        
+        .read-more-link {
+            display: inline-block;
+            font-size: 1em;
+            color: #D9A77D;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        .read-more-link:hover {
+            color: #7F5539;
+        }
+        
+        /* Comments Section */
+        .comments-section h2 {
+            font-size: 3.2em;
+            color: #ffffff;
+            background-color: #121212;
+            margin-bottom: 20px;
+        }
+        
+        .comments-list {
+            text-align: left;;
+            color: #ffffff;
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: #121212;
+        }
+        
+        .comment {
+            background-color: #1f1f1f;
+            padding: 20px;
+            border-radius: 10px;;
+            color: #ffffff;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .comment-author {
+            font-weight: bold;
+            color: #D9A77D;
+            font-size: 1.3em;
+            background-color: #1f1f1f;
+        }
+        
+        .comment-date {
+            font-size: 0.9em;;
+            color: #5b5b5b;
+            margin-bottom: 10px;
+            background-color: #1f1f1f;
+        }
+        
+        .comment-text {
+            font-size: 1em;
+            color: #ffffff;
+            background-color: #1f1f1f;
+        }
+        
+        .add-comment h3 {
+            font-size: 2em;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 45px;
+        }
+        
+        #comment-form {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        #comment-author, #comment-text {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        
+        .submit-button {
+            padding: 10px 20px;
+            background-color: #D9A77D;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        
+        .submit-button:hover {
+            background-color: #7F5539;
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        .newsletter-subscribe {
+            background-color: #A65D3A;
+            color: #ffffff;
+            padding: 60px 20px;
+            text-align: center;
+            margin: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .newsletter-subscribe h2 {
+            font-size: 3.2em;
+            background-color: #A65D3A;
+            margin-bottom: 15px;
+        }
+        
+        .subscribe-text {
+            font-size: 1.2em;
+            background-color: #a65c3a2a;
+            margin-bottom: 30px;
+        }
+        
+        #subscribe-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            background-color: #A65D3A;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        #subscriber-email {
+            flex: 1;
+            padding: 15px;
+            font-size: 1em;
+            border: none;
+            background-color: #0000005f;
+            color: #fff;
+            border-radius: 5px;
+            outline: none;
+        }
+        
+        .subscribe-button {
+            padding: 15px 25px;
+            background-color: #ffffff;
+            color: #D9A77D;
+            font-size: 1em;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .subscribe-button:hover {
+            background-color: #e6e6e6;
+            color: #7F5539;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            #subscribe-form {
+                flex-direction: column;
+            }
+            
+            #subscriber-email, .subscribe-button {
+                width: 100%;
+            }
+        }
+        
+
+
+
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <!-- Brand Logo -->
+        <div class="navbar-brand">
+            <a href="index.html">
+                <img src="logo.png" alt="Real Estate Logo">
+            </a>
+        </div>
+    
+        <!-- Desktop Navigation Links -->
+        <nav class="navbar-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="listing.html">Listings</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="testimonial.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    
+        <!-- Hamburger Icon for Mobile Menu -->
+        <div class="navbar-menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    
+        <!-- Mobile Menu with Overlay -->
+        <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+                <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+                <li><a href="listing.html" onclick="toggleMenu()">Listings</a></li>
+                <li><a href="process.html" onclick="toggleMenu()">Process</a></li>
+                <li><a href="blog.html" onclick="toggleMenu()">Blog</a></li>
+                <li><a href="testimonial.html" onclick="toggleMenu()">Testimonials</a></li>
+                <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="featured-article">
+        <div class="article-image-container">
+            <img src="https://thumbs.cityrealty.com/smart/1004x/webp/2/22/22ca6350cd0dcc474556e1e06bd8144482a45135/15-central-park-west-01.jpg" alt="Featured Article Image" class="article-image">
+        </div>
+        <div class="article-content">
+            <h2>Eco-Friendly Home Renovations:<br> A Guide to Sustainable Living</h2>
+            <p class="article-summary">Explore how sustainable home renovations can reduce your environmental impact while enhancing comfort and efficiency. Discover practical, eco-friendly ideas for every room of your home.</p>
+            <div class="article-meta">
+                <p><strong>Author:</strong> Sarah Williams</p>
+                <p><strong>Date:</strong> October 25, 2023</p>
+            </div>
+            <a href="#read-more" class="read-more-button">Read Full Article</a>
+        </div>
+    </section>
+    
+    <br><br>
+
+    <section class="latest-posts">
+        <h2>Latest Posts</h2>
+        <div class="posts-container">
+            <div class="post-card">
+                <img src="https://valmark.in/blog/wp-content/uploads/2023/12/Smart-Homebuying-Moves-in-the-New-Year-A-2024-Guide-1280x720.png" alt="Post Image 1" class="post-image">
+                <div class="post-content">
+                    <h3>Guide to Home Buying in 2024</h3>
+                    <p class="post-date">Published on October 20, 2024</p>
+                    <p class="post-summary">Learn the essential steps and tips for buying a home this year, including budgeting and finding the perfect location.</p>
+                    <a href="#read-more" class="read-more-link">Read More</a>
+                </div>
+            </div>
+            
+            <div class="post-card">
+                <img src="https://primior.com/wp-content/uploads/2024/01/Real-Estate-Market-Trends-2024-Insights-from-a-Top-Industry-Leader-1024x585-1.webp" alt="Post Image 2" class="post-image">
+                <div class="post-content">
+                    <h3>Top Trends in Real Estate</h3>
+                    <p class="post-date">Published on October 18, 2023</p>
+                    <p class="post-summary">Explore the latest real estate trends that are shaping the market and what they mean for buyers and investors.</p>
+                    <a href="#read-more" class="read-more-link">Read More</a>
+                </div>
+            </div>
+            
+            <div class="post-card">
+                <img src="https://www.renowow.ca/wp-content/uploads/2022/05/6-expert-tips-for-a-successful-home-renovation-f.jpg" alt="Post Image 3" class="post-image">
+                <div class="post-content">
+                    <h3>5 Tips for a Successful Home Renovation</h3>
+                    <p class="post-date">Published on October 15, 2023</p>
+                    <p class="post-summary">Get expert advice on planning and executing a home renovation that stays on budget and meets your goals.</p>
+                    <a href="#read-more" class="read-more-link">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br><br>
+
+    <section class="categories-section">
+        <h2>Explore Categories</h2>
+        <div class="categories-container">
+            <div class="category-card">
+                <h3>Industry News</h3>
+                <p>Stay updated with the latest news and developments in the real estate industry.</p>
+                <a href="#industry-news" class="category-link">Browse Articles</a>
+            </div>
+            
+            <div class="category-card">
+                <h3>Market Trends</h3>
+                <p>Explore current real estate market trends and forecasts for buyers and investors.</p>
+                <a href="#market-trends" class="category-link">Browse Articles</a>
+            </div>
+            
+            <div class="category-card">
+                <h3>Tips & Guides</h3>
+                <p>Get practical advice and step-by-step guides for home buying, selling, and renovation.</p>
+                <a href="#tips-guides" class="category-link">Browse Articles</a>
+            </div>
+            
+            <div class="category-card">
+                <h3>Investment Insights</h3>
+                <p>Discover strategies and insights to make smart real estate investments.</p>
+                <a href="#investment-insights" class="category-link">Browse Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <br><br>
+
+    <section class="recommended-posts">
+        <h2>Suggested Posts</h2>
+        <div class="masonry-grid">
+            <div class="masonry-item">
+                <img src="https://www.artis-nekretnine.hr/img/villas.jpg" alt="Post Image 1" class="post-image">
+                <h3>Investment Strategies for Real Estate</h3>
+                <p class="post-summary">Learn strategies to maximize returns on your real estate investments.</p>
+                <a href="#read-more" class="read-more-link">Read More</a>
+            </div>
+            
+            <div class="masonry-item">
+                <img src="https://prod.rockmedialibrary.com/api/public/content/ff061825fa8e44bf8108de5c786c0062?v=4c4f7c7a" alt="Post Image 2" class="post-image">
+                <h3>5 Tips to Increase Property Value</h3>
+                <p class="post-summary">Effective tips to boost the value of your home before selling.</p>
+                <a href="#read-more" class="read-more-link">Read More</a>
+            </div>
+            
+            <div class="masonry-item">
+                <img src="https://www.adobe.com/creativecloud/photography/discover/media_1159b19a8225b2413136806b0be15e4c921e3d122.png?width=750&format=png&optimize=medium" alt="Post Image 3" class="post-image">
+                <h3>Understanding Market Trends</h3>
+                <p class="post-summary">Insights into current real estate market trends and forecasts.</p>
+                <a href="#read-more" class="read-more-link">Read More</a>
+            </div>
+            
+            <div class="masonry-item">
+                <img src="https://png.pngtree.com/thumb_back/fw800/background/20240530/pngtree-modern-luxury-real-estate-mansion-house-image_15842799.jpg" alt="Post Image 4" class="post-image">
+                <h3>Eco-Friendly Home Renovations</h3>
+                <p class="post-summary">Sustainable renovation ideas for an eco-friendly home.</p>
+                <a href="#read-more" class="read-more-link">Read More</a>
+            </div>
+            
+            <div class="masonry-item">
+                <img src="https://images.ctfassets.net/n2ifzifcqscw/3QRMlAcJFrYAEAbhziixZW/d4b9aa50215c5ea7a161b8a6b59f1974/hero-real-estate-facts-trends.jpeg" alt="Post Image 5" class="post-image">
+                <h3>Buying vs. Renting: What’s Best?</h3>
+                <p class="post-summary">Weigh the pros and cons of buying vs. renting in today’s market.</p>
+                <a href="#read-more" class="read-more-link">Read More</a>
+            </div>
+
+            <div class="masonry-item">
+                <img src="https://png.pngtree.com/thumb_back/fh260/background/20240614/pngtree-luxury-real-estate-house-property-image_15868457.jpg" alt="Post Image 1" class="post-image">
+                <h3>Investment Strategies for Real Estate</h3>
+                <p class="post-summary">Learn strategies to maximize returns on your real estate investments.</p>
+                <a href="#read-more" class="read-more-link">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <br><br>
+
+    <section class="popular-posts">
+        <h2>Most Popular Posts</h2>
+        <div class="popular-posts-grid">
+            <div class="post-card">
+                <img src="https://crm.roongtadevelopers.com/app/admin/images/blog/1687342144.jpg" alt="Popular Post 1" class="post-image">
+                <div class="post-content">
+                    <h3>Top Investment Tips for Real Estate</h3>
+                    <p class="post-summary">Explore the best strategies to maximize your ROI in the real estate market.</p>
+                    <a href="#read-more" class="read-more-link">Read More</a>
+                </div>
+            </div>
+            
+            <div class="post-card">
+                <img src="https://cdn.sanity.io/images/k342bbkb/production/8d4f8f94b0d947b7345ba81249bdfd3ecead4167-2000x1200.jpg?rect=100,0,1800,1200&w=2000&h=1333&auto=format" alt="Popular Post 2" class="post-image">
+                <div class="post-content">
+                    <h3>Renovation Ideas to Boost Property Value</h3>
+                    <p class="post-summary">Discover impactful renovations that can increase the value of your property.</p>
+                    <a href="#read-more" class="read-more-link">Read More</a>
+                </div>
+            </div>
+            
+            <div class="post-card">
+                <img src="https://m.economictimes.com/thumb/msid-104794994,width-1600,height-900,resizemode-4,imgsize-80439/understanding-property-market-cycles-for-smart-investment-choices.jpg" alt="Popular Post 3" class="post-image">
+                <div class="post-content">
+                    <h3>Understanding Market Cycles</h3>
+                    <p class="post-summary">Learn about real estate market cycles and how to make the most of each phase.</p>
+                    <a href="#read-more" class="read-more-link">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="comments-section">
+        <h2>Comments</h2>
+        <div class="comments-list">
+            <div class="comment">
+                <p class="comment-author">Brock Mitchell</p>
+                <p class="comment-date">October 29, 2023</p>
+                <p class="comment-text">This article was very insightful! I learned a lot about real estate investment strategies.</p>
+            </div>
+            <div class="comment">
+                <p class="comment-author">Max Holloway</p>
+                <p class="comment-date">October 28, 2023</p>
+                <p class="comment-text">Great tips on renovation! Will definitely be applying some of these ideas to my home.</p>
+            </div>
+        </div>
+        
+        <div class="add-comment">
+            <h3>Leave a Comment</h3>
+            <form id="comment-form">
+                <input type="text" id="comment-author" placeholder="Your Name" required>
+                <textarea id="comment-text" placeholder="Your Comment" required></textarea>
+                <button type="submit" class="submit-button">Post Comment</button>
+            </form>
+        </div>
+    </section>
+    
+
+    <br><br>
+
+    <section class="newsletter-subscribe">
+        <h2>Stay Updated!</h2>
+        <p class="subscribe-text">Subscribe to our newsletter to receive the latest blog posts, updates, and exclusive content directly to your inbox.</p>
+        <form id="subscribe-form">
+            <input type="email" id="subscriber-email" placeholder="Enter your email address" required>
+            <button type="submit" class="subscribe-button">Subscribe</button>
+        </form>
+    </section>
+    
+
+
+        
+
+<br><br>
+
+<footer class="footer">
+    <div class="footer-overlay">
+        <div class="footer-content">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+                <img src="8.png" alt="Company Logo" class="footer-logo">
+                <h2>Cartographer Realty</h2>
+                <p>Your gateway to finding exceptional properties. Discover unique listings and investment opportunities tailored just for you.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Links Section -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="listing.html">Listing</a></li>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="testimonial.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info Section -->
+            <div class="footer-contact">
+                <h3>Get In Touch</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 1234 Elm Street, Springfield, IL 62704</p>
+                <p><i class="fas fa-phone-alt"></i> (123) 456-7890</p>
+                <p><i class="fas fa-envelope"></i> info@cartographerrealty.com</p>
+            </div>
+
+            <!-- Newsletter Section -->
+            <div class="footer-newsletter">
+                <h3>Stay Connected</h3>
+                <p>Subscribe to our newsletter for the latest property listings, market insights, and exclusive offers.</p>
+                <form action="#">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Cartographer Realty. All rights reserved. | <a href="#privacy">Privacy Policy</a></p>
+        </div>
+    </div>
+</footer>
+    
+    
+    
+
+
+
+    <script>
+
+        // Toggle Mobile Menu
+function toggleMenu() {
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileOverlay = document.getElementById("mobileOverlay");
+    mobileMenu.classList.toggle("open");
+    mobileOverlay.classList.toggle("open");
+}
+
+
+        document.querySelector('.read-more-button').addEventListener('click', event => {
+            event.preventDefault();
+            document.querySelector(event.target.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+        
+        document.getElementById('comment-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const author = document.getElementById('comment-author').value;
+            const text = document.getElementById('comment-text').value;
+            
+            if (author && text) {
+                const commentList = document.querySelector('.comments-list');
+                const newComment = document.createElement('div');
+                newComment.classList.add('comment');
+                
+                newComment.innerHTML = `
+                    <p class="comment-author">${author}</p>
+                    <p class="comment-date">${new Date().toLocaleDateString()}</p>
+                    <p class="comment-text">${text}</p>
+                `;
+                
+                commentList.appendChild(newComment);
+                document.getElementById('comment-form').reset();
+            }
+        });
+        
+        
+    </script>
+
+
+</body>
+</html>

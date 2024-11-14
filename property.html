@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Poppins';
+        }
+
+
+
+
+
+
+
+
+
+
+/* Navbar Container */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: #1e1e1e;
+    color: #fff;
+    margin: 20px;
+    border-radius: 10px;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* Brand Logo */
+.navbar-brand img {
+    max-height: 80px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    transform: none;
+}
+
+/* Desktop Navigation Links */
+.navbar-links {
+    margin-right: 20px;
+    padding: 20px;
+    background-color: transparent;
+}
+
+.navbar-links ul {
+    list-style: none;
+    display: flex;
+    background-color: transparent;
+    gap: 35px;
+}
+
+.navbar-links ul li {
+    position: relative;
+    background-color: transparent;
+}
+
+.navbar-links ul li a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    background-color: transparent;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-links ul li a:hover {
+    color: #ff6f61;
+}
+
+.navbar-links ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ff6f61;
+    transition: width 0.3s ease;
+}
+
+.navbar-links ul li a:hover::after {
+    width: 100%;
+}
+
+/* Mobile Menu Icon */
+.navbar-menu-icon {
+    display: none;
+    font-size: 1.8em;
+    color: #9C6644;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu-icon:hover {
+    color: #ff6f61;
+}
+
+/* Mobile Menu and Overlay */
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    z-index: 90;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-overlay.open {
+    display: block;
+    opacity: 1;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 270px;
+    height: 100vh;
+    background: #1e1e1e;
+    color: #fff;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-menu.open {
+    transform: translateX(0);
+}
+
+.mobile-menu ul {
+    list-style: none;
+    text-align: center;
+}
+
+.mobile-menu ul li {
+    margin: 20px 0;
+}
+
+.mobile-menu ul li a {
+    color: #ddd;
+    font-size: 1.3em;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu ul li a:hover {
+    color: #ff6f61;
+}
+
+/* Smooth Open Animation */
+.mobile-menu.open ul li {
+    animation: slideIn 0.5s ease forwards;
+}
+
+/* Keyframes for Slide Animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Styling for Mobile */
+@media (max-width: 426px) {
+    .navbar-links {
+        display: none;
+    }
+    .navbar-menu-icon {
+        display: block;
+    }
+
+    .navbar-brand img {
+        max-height: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+    }
+    .navbar-menu-icon {
+        display: block;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+    background: url('6.png') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    padding: 40px 20px;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.632); /* Darker overlay for readability */
+    z-index: 1;
+}
+
+.footer-overlay, .footer-links, .footer-contact, .footer-newsletter {
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    background-color: rgba(255, 0, 0, 0); /* Transparent background for content box */
+    border-radius: 10px;
+}
+
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 15px;
+
+}
+
+.footer-brand {
+    flex: 1;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.footer-brand img {
+    max-width: 60%;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.footer-brand h2 {
+    font-size: 1.8em;
+    color: #fff;
+    margin-bottom: 10px;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.footer-brand p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    background-color: transparent;
+}
+
+.social-icons {
+    margin-top: 15px;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.social-icons a {
+    font-size: 1.5em;
+    background-color: rgba(255, 0, 0, 0);
+    color: #fff;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #9C6644;
+}
+
+.footer-links h3, .footer-contact h3, .footer-newsletter h3 {
+    color: #fff;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.footer-newsletter p {
+    background-color: rgba(255, 0, 0, 0);
+    margin: 5px 0;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    background-color: rgba(255, 0, 0, 0);
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin: 8px 0;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    background-color: rgba(255, 0, 0, 0); 
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #9C6644;
+}
+
+.footer-contact p {
+    color: #fff;
+    background-color: rgba(255, 0, 0, 0); 
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact p i {
+    margin-right: 10px;
+    color: #9C6644;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-newsletter form {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-newsletter input[type="email"] {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-newsletter button {
+    padding: 10px 20px;
+    background-color: #9C6644;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer-newsletter button:hover {
+    background-color: #fff;
+    color: #9C6644;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 0.9em;
+    background-color: rgba(255, 0, 0, 0); 
+    color: #ccc;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 2;
+}
+
+.footer-bottom a {
+    color: #9C6644;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-bottom p {
+    
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-bottom a:hover {
+    color: #fff;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+    .footer-brand, .footer-links, .footer-contact, .footer-newsletter {
+        margin: 10px 0;
+    }
+
+    .footer-brand img {
+        max-width: 70%;
+        background-color: rgba(255, 0, 0, 0);
+    }
+}
+
+@media (max-width: 426px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+    .footer-brand, .footer-links, .footer-contact, .footer-newsletter {
+        margin: 10px 0;
+    }
+
+    .footer-brand img {
+        max-width: 100%;
+        background-color: rgba(255, 0, 0, 0);
+    }
+}
+
+
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+        }
+
+        .property-details {
+            margin-top: 20px;
+        }
+
+        .property-details img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .property-details h2 {
+            font-weight: 800;
+            font-size: 2em;
+            color: #000000;
+        }
+
+        .property-details p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            color: #000;
+            line-height: 1.6;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: 600;
+            color: #686868;
+            margin-bottom: 20px;
+        }
+
+        .similar-properties {
+            margin-top: 50px;
+        }
+
+        .similar-properties h3 {
+            font-weight: 600;
+            color: #000000;
+            font-size: 3.2em;
+            margin-bottom: 20px;
+        }
+
+        .similar-properties .card {
+            transition: transform 0.2s;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .similar-properties .card:hover {
+            transform: none;
+        }
+
+        .similar-properties .card img {
+            border-radius: 8px;
+            height: 200px;
+            width: 93%;
+            margin: 10px;
+            object-fit: cover;
+        }
+
+        .similar-properties .card h5 {
+            font-weight: 900;
+            font-size: 1.5em;
+            color: #000000;
+        }
+
+        .btn-primary {
+            background-color: #D9A77D;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #7F5539;
+        }
+
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <!-- Brand Logo -->
+        <div class="navbar-brand">
+            <a href="index.html">
+                <img src="logo.png" alt="Real Estate Logo">
+            </a>
+        </div>
+    
+        <!-- Desktop Navigation Links -->
+        <nav class="navbar-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="listing.html">Listings</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="testimonial.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    
+        <!-- Hamburger Icon for Mobile Menu -->
+        <div class="navbar-menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    
+        <!-- Mobile Menu with Overlay -->
+        <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+                <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+                <li><a href="listing.html" onclick="toggleMenu()">Listings</a></li>
+                <li><a href="process.html" onclick="toggleMenu()">Process</a></li>
+                <li><a href="blog.html" onclick="toggleMenu()">Blog</a></li>
+                <li><a href="testimonial.html" onclick="toggleMenu()">Testimonials</a></li>
+                <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    
+    <div class="container property-details">
+        <div id="property-container">
+            <!-- Property details will be loaded here -->
+        </div>
+        <div class="similar-properties">
+            <h3>Similar Properties</h3>
+            <div class="row" id="similar-properties-list">
+                <!-- Similar properties will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+
+    <br><br>
+
+    <footer class="footer">
+        <div class="footer-overlay">
+            <div class="footer-content">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <img src="8.png" alt="Company Logo" class="footer-logo">
+                    <h2>Cartographer Realty</h2>
+                    <p>Your gateway to finding exceptional properties. Discover unique listings and investment opportunities tailored just for you.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+    
+            <!-- Links Section -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="listing.html">Listing</a></li>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="testimonial.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+    
+                <!-- Contact Info Section -->
+                <div class="footer-contact">
+                    <h3>Get In Touch</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 1234 Elm Street, Springfield, IL 62704</p>
+                    <p><i class="fas fa-phone-alt"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> info@cartographerrealty.com</p>
+                </div>
+    
+                <!-- Newsletter Section -->
+                <div class="footer-newsletter">
+                    <h3>Stay Connected</h3>
+                    <p>Subscribe to our newsletter for the latest property listings, market insights, and exclusive offers.</p>
+                    <form action="#">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Cartographer Realty. All rights reserved. | <a href="#privacy">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const properties = [
+            {
+                "id": 1,
+                "title": "Luxury Villa",
+                "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/466378675.jpg?k=47439be8a91e422a1dbef4f02630d6c86f1266a815d7bd8f21b2c5ce0492bcc1&o=&hp=1",
+                "description": "4 Bed, 3 Bath, 3500 sq.ft",
+                "details": "Located in a prime neighborhood, this luxurious villa offers spacious rooms, modern design, and a beautiful garden area. Perfect for families seeking comfort and privacy.",
+                "price": "$1,200,000",
+                "type": "houses"
+            },
+            {
+                "id": 2,
+                "title": "Modern Apartment",
+                "image": "https://www.sbid.org/wp-content/uploads/2021/12/V.Concept-by-Victoria-Vitkovskaya-Almond-Apartment16.jpg",
+                "description": "2 Bed, 2 Bath, 1200 sq.ft",
+                "details": "This apartment features stunning city views, contemporary finishes, and easy access to urban amenities. Ideal for professionals and small families.",
+                "price": "$600,000",
+                "type": "apartments"
+            },
+            {
+                "id": 3,
+                "title": "Cozy Cottage",
+                "image": "https://i.ytimg.com/vi/_P0lsZIGoeE/maxresdefault.jpg",
+                "description": "3 Bed, 2 Bath, 1500 sq.ft",
+                "details": "This charming cottage offers a peaceful atmosphere and scenic views. Enjoy a warm fireplace and a comfortable living space, ideal for weekend getaways.",
+                "price": "$450,000",
+                "type": "houses"
+            },
+            {
+                "id": 4,
+                "title": "Beachfront Condo",
+                "image": "https://www.miamiluxuryhomes.com/wp-content/uploads/2018/11/57-Ocean-Terrace.jpg",
+                "description": "2 Bed, 2 Bath, 1100 sq.ft",
+                "details": "Wake up to the sound of waves in this beachfront condo, featuring a modern design and breathtaking ocean views. Ideal for beach lovers.",
+                "price": "$750,000",
+                "type": "condos"
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const propertyId = urlParams.get('id');
+
+            const property = properties.find(p => p.id == propertyId);
+
+            if (property) {
+                const propertyContainer = document.getElementById('property-container');
+                propertyContainer.innerHTML = `
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="${property.image}" class="img-fluid" alt="${property.title}">
+                        </div>
+                        <div class="col-md-6">
+                            <h2>${property.title}</h2>
+                            <p class="price">${property.price}</p>
+                            <p>${property.details}</p>
+                        </div>
+                    </div>
+                `;
+
+                const similarProperties = properties.filter(p => p.type === property.type && p.id !== property.id);
+                const similarPropertiesList = document.getElementById('similar-properties-list');
+
+                similarProperties.forEach(similarProperty => {
+                    const similarPropertyCard = document.createElement('div');
+                    similarPropertyCard.className = 'col-md-3';
+                    similarPropertyCard.innerHTML = `
+                        <div class="card">
+                            <img src="${similarProperty.image}" class="card-img-top" alt="${similarProperty.title}">
+                            <div class="card-body">
+                                <h5 class="card-title">${similarProperty.title}</h5>
+                                <p class="card-text">${similarProperty.description}</p>
+                                <a href="property.html?id=${similarProperty.id}" class="btn btn-primary btn-block">View Details</a>
+                            </div>
+                        </div>
+                    `;
+                    similarPropertiesList.appendChild(similarPropertyCard);
+                });
+            } else {
+                document.getElementById('property-container').innerHTML = '<p>Property not found.</p>';
+            }
+        });
+    </script>
+</body>
+</html>

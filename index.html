@@ -1,0 +1,2137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Real Estate Website</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            background-color: #121212;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Poppins';
+        }
+
+
+
+
+
+
+
+
+/* Navbar Container */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: #1e1e1e;
+    color: #fff;
+    margin: 20px;
+    border-radius: 10px;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* Brand Logo */
+.navbar-brand img {
+    max-height: 80px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    transform: none;
+}
+
+/* Desktop Navigation Links */
+.navbar-links {
+    margin-right: 20px;
+    padding: 20px;
+    background-color: transparent;
+}
+
+.navbar-links ul {
+    list-style: none;
+    display: flex;
+    background-color: transparent;
+    gap: 35px;
+}
+
+.navbar-links ul li {
+    position: relative;
+    background-color: transparent;
+}
+
+.navbar-links ul li a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    background-color: transparent;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-links ul li a:hover {
+    color: #ff6f61;
+}
+
+.navbar-links ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ff6f61;
+    transition: width 0.3s ease;
+}
+
+.navbar-links ul li a:hover::after {
+    width: 100%;
+}
+
+/* Mobile Menu Icon */
+.navbar-menu-icon {
+    display: none;
+    font-size: 1.8em;
+    color: #9C6644;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu-icon:hover {
+    color: #ff6f61;
+}
+
+/* Mobile Menu and Overlay */
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    z-index: 90;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-overlay.open {
+    display: block;
+    opacity: 1;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 270px;
+    height: 100vh;
+    background: #1e1e1e;
+    color: #fff;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-menu.open {
+    transform: translateX(0);
+}
+
+.mobile-menu ul {
+    list-style: none;
+    text-align: center;
+}
+
+.mobile-menu ul li {
+    margin: 20px 0;
+}
+
+.mobile-menu ul li a {
+    color: #ddd;
+    font-size: 1.3em;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu ul li a:hover {
+    color: #ff6f61;
+}
+
+/* Smooth Open Animation */
+.mobile-menu.open ul li {
+    animation: slideIn 0.5s ease forwards;
+}
+
+/* Keyframes for Slide Animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Styling for Mobile */
+@media (max-width: 426px) {
+    .navbar-links {
+        display: none;
+    }
+    .navbar-menu-icon {
+        display: block;
+    }
+
+    .navbar-brand img {
+        max-height: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+    }
+    .navbar-menu-icon {
+        display: block;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+    background: url('6.png') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    padding: 40px 20px;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.632); /* Darker overlay for readability */
+    z-index: 1;
+}
+
+.footer-overlay, .footer-links, .footer-contact, .footer-newsletter {
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    background-color: rgba(255, 0, 0, 0); /* Transparent background for content box */
+    border-radius: 10px;
+}
+
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 15px;
+
+}
+
+.footer-brand {
+    flex: 1;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.footer-brand img {
+    max-width: 60%;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.footer-brand h2 {
+    font-size: 1.8em;
+    color: #fff;
+    margin-bottom: 10px;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.footer-brand p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    background-color: transparent;
+}
+
+.social-icons {
+    margin-top: 15px;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.social-icons a {
+    font-size: 1.5em;
+    background-color: rgba(255, 0, 0, 0);
+    color: #fff;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #9C6644;
+}
+
+.footer-links h3, .footer-contact h3, .footer-newsletter h3 {
+    color: #fff;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.footer-newsletter p {
+    background-color: rgba(255, 0, 0, 0);
+    margin: 5px 0;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    background-color: rgba(255, 0, 0, 0);
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin: 8px 0;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    background-color: rgba(255, 0, 0, 0); 
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #9C6644;
+}
+
+.footer-contact p {
+    color: #fff;
+    background-color: rgba(255, 0, 0, 0); 
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact p i {
+    margin-right: 10px;
+    color: #9C6644;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-newsletter form {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-newsletter input[type="email"] {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-newsletter button {
+    padding: 10px 20px;
+    background-color: #9C6644;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer-newsletter button:hover {
+    background-color: #fff;
+    color: #9C6644;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 0.9em;
+    background-color: rgba(255, 0, 0, 0); 
+    color: #ccc;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 2;
+}
+
+.footer-bottom a {
+    color: #9C6644;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-bottom p {
+    
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-bottom a:hover {
+    color: #fff;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+    .footer-brand, .footer-links, .footer-contact, .footer-newsletter {
+        margin: 10px 0;
+    }
+
+    .footer-brand img {
+        max-width: 70%;
+        background-color: rgba(255, 0, 0, 0);
+    }
+}
+
+@media (max-width: 426px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+    .footer-brand, .footer-links, .footer-contact, .footer-newsletter {
+        margin: 10px 0;
+    }
+
+    .footer-brand img {
+        max-width: 100%;
+        background-color: rgba(255, 0, 0, 0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.homebanner {
+    position: relative;
+    margin: 20px;
+    padding: 80px 20px;
+    border-radius: 8px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 600px;
+    overflow: hidden;
+}
+
+.homebanner .bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    border-radius: 8px;
+}
+
+.homebanner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.396); /* Dark overlay */
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.homebanner .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    background-color: #ff000000;
+}
+
+.homebanner .hero-content h1 {
+    font-size: 2.6em;
+    background-color: #ff000000;
+    margin-bottom: 10px;
+}
+
+.homebanner .hero-content p {
+    font-size: 1em;
+    background-color: #ff000000;
+    margin-bottom: 20px;
+}
+
+.homebanner .cta-button {
+    padding: 12px 24px;
+    background-color: #9C6644;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.homebanner .cta-button:hover {
+    background-color: #7F5539;
+}
+
+
+
+
+
+
+
+/* Wrapper for Centered Content */
+.highlight-wrapper {
+    display: flex;
+    justify-content: center;
+    background: url('7.jpeg') no-repeat center center;
+    padding: 160px 0;
+}
+
+.highlight-section {
+    display: flex;
+    background-color: #ff000000;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px; /* Optional max-width for large screens */
+}
+
+.highlight-left {
+    flex: 1;
+    background-color: #ffffff00;
+    min-width: 300px;
+}
+
+.highlight-left h2 {
+    font-size: 3.2em;
+    line-height: 1.2;
+    background-color: #ff000000;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 0;
+}
+
+.highlight-right {
+    flex: 2;
+    min-width: 300px;
+    background-color: #ff000000;
+    padding-left: 20px;
+}
+
+.highlight-right p {
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #ff000000;
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .highlight-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .highlight-right {
+        padding-left: 0;
+        margin-top: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Featured Listings Section */
+.homefeature {
+    padding: 100px 20px;
+    background-color: #121212;
+    background-size: cover;
+    text-align: center;
+}
+
+.homefeature h2 {
+    font-size: 3.2em;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.homefeature p {
+    font-size: 1.1em;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.homefeature .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.homefeature .property-card {
+    background-color: #1F1F1F;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.142);
+    max-width: 360px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.homefeature .property-card:hover {
+    transform: translateY(-5px);
+}
+
+.homefeature .property-image {
+    width: 95%;
+    height: 250px;
+    margin: 8px 0;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.homefeature .property-info {
+    padding: 20px;
+    text-align: left;
+    background-color: #1F1F1F;
+}
+
+.homefeature .property-info h3 {
+    font-size: 1.6em;
+    color: #ffffff;
+    background-color: #1F1F1F;
+    margin-bottom: 10px;
+}
+
+.homefeature .location{
+    font-weight: bold;
+    font-size: 0.9em;
+    background-color: #1F1F1F;
+    color: #828282;
+    margin-bottom: 10px;
+}
+.homefeature .price {
+    font-weight: bold;
+    font-size: 1.3em;
+    color: #d0d0d0;
+    background-color: #1F1F1F;
+    margin-bottom: 10px;
+}
+
+.homefeature .description {
+    font-size: 1em;
+    background-color: #1F1F1F;
+    color: #b6b6b6;
+    margin-bottom: 15px;
+}
+
+.homefeature .view-details {
+    padding: 10px 20px;
+    background-color: #9C6644;
+    color: #fff;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.homefeature .view-details:hover {
+    background-color: #7F5539;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .homefeature .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Property Categories Section */
+.homeproperty {
+    padding: 100px 20px;
+    margin: 20px;
+    border-radius: 20px;
+    background-color: #1F1F1F;
+    background-size: cover;
+    text-align: center;
+}
+
+.homeproperty h2 {
+    background-color: #1F1F1F;
+    font-size: 3.2em;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.homeproperty p {
+    font-size: 1em;
+    background-color: #1F1F1F;
+    margin-bottom: 30px;
+    color: #ffffff;
+}    
+.homeproperty .category-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #1F1F1F;
+    gap: 20px;
+}
+
+.homeproperty .category-card {
+    max-width: 280px;
+    background-color: #121212;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+
+.homeproperty .category-card:hover {
+    transform: translateY(-5px);
+}
+
+.homeproperty .category-image {
+    width: 95%;
+    margin: 7px 0;
+    border-radius: 5px;
+    height: 160px;
+    object-fit: cover;
+}
+
+.homeproperty .category-info {
+    padding: 20px;
+    text-align: left;
+}
+
+.homeproperty .category-info h3 {
+    font-size: 1.3em;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.homeproperty .category-info p {
+    font-size: 0.9em;
+    color: #ffffff;
+    background-color: #121212;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .homeproperty .category-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* About Us Section */
+.homeabout {
+    background-color: #121212;
+    padding: 60px 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.homeabout .about-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.homeabout h2 {
+    font-size: 3.2em;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.homeabout .about-description {
+    font-size: 1.1em;
+    color: #dadada;
+    margin-bottom: 30px;
+}
+
+.homeabout .about-content {
+    font-size: 1em;
+    color: #dadada;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.homeabout .about-stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.homeabout .stat-item {
+    text-align: center;
+    background-color: #121212;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.homeabout .stat-item h3 {
+    font-size: 2.5em;
+    color: #7F5539;
+    margin-bottom: 5px;
+}
+
+.homeabout .stat-item p {
+    font-size: 0.9em;
+    color: #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .homeabout .about-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* How It Works Section */
+.home-how-it-works {
+    background-color: #1F1F1F;
+    background-size: cover;
+    border-radius: 20px;
+    padding: 130px 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.home-how-it-works h2 {
+    font-size: 3.2em;
+    color: #ffffff;
+    background-color: #1F1F1F;
+    margin-bottom: 20px;
+}
+
+.home-how-it-works .how-description {
+    font-size: 1.1em;
+    color: #c7c7c7;
+    background-color: #1F1F1F;
+    margin-bottom: 40px;
+}
+
+.home-how-it-works .steps-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #1F1F1F;
+    gap: 20px;
+    justify-content: center;
+}
+
+.home-how-it-works .step-card {
+    max-width: 250px;
+    background-color: #121212;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.home-how-it-works .step-card:hover {
+    transform: translateY(-5px);
+}
+
+.home-how-it-works .step-icon {
+    font-size: 2.5em;
+    color: #9C6644;
+    margin-bottom: 10px;
+}
+
+.home-how-it-works .step-card h3 {
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.home-how-it-works .step-card p {
+    font-size: 0.9em;
+    color: #dcdcdc;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .home-how-it-works .steps-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Customer Testimonials Section */
+.testimonials {
+    background-color: #121212;
+    padding: 60px 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 3.2em;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.testimonials .testimonial-description {
+    font-size: 1.1em;
+    color: #c9c9c9;
+    margin-bottom: 40px;
+}
+
+.testimonials .testimonial-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.testimonials .testimonial-card {
+    max-width: 300px;
+    background-color: #1F1F1F;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    position: relative;
+}
+
+.testimonials .client-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.testimonials blockquote {
+    font-size: 1em;
+    color: #a5a5a5;
+    background-color: #1F1F1F;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.testimonials .client-name {
+    font-size: 0.9em;
+    color: #ffffff;
+    background-color: #1F1F1F;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.testimonials .view-more-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #9C6644;
+    color: #fff;
+    font-size: 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.testimonials .view-more-btn:hover {
+    background-color: #7F5539;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .testimonials .testimonial-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Popular Cities Section */
+.popular-cities {
+    background-color: #1F1F1F;
+    padding: 100px 20px;
+    border-radius: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.popular-cities h2 {
+    font-size: 3.2em;
+    color: #ffffff;
+    background-color: #1F1F1F;
+    margin-bottom: 20px;
+}
+
+.cities-description {
+    font-size: 1.1em;
+    color: #d0d0d0;
+    margin-bottom: 40px;
+    background-color: #1F1F1F;
+}
+
+.cities-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #1F1F1F;
+    gap: 20px;
+    justify-content: center;
+}
+
+.city-card {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.city-card:hover {
+    transform: scale(1.05);
+}
+
+.city-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.city-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.758);
+    color: #fff;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: opacity 0.3s ease;
+    text-align: center;
+}
+
+.city-card:hover .city-overlay {
+    opacity: 1;
+}
+
+.city-overlay h3 {
+    font-size: 1.5em;
+    background: rgba(0, 0, 0, 0);
+    margin-bottom: 10px;
+}
+
+.city-overlay p {
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    background: rgba(0, 0, 0, 0);
+}
+
+.view-listings-btn {
+    padding: 10px 20px;
+    background-color: #9C6644;
+    color: #fff;
+    font-size: 0.9em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.view-listings-btn:hover {
+    background-color: #7F5539;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cities-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Agents & Brokers Section */
+.agents-brokers {
+    background-color: #121212;
+    padding: 60px 20px;
+    border-radius: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.agents-brokers h2 {
+    font-size: 3.2em;
+    color: #ffffff;
+    background-color: #121212;
+    margin-bottom: 20px;
+}
+
+.agents-description {
+    font-size: 1.1em;
+    background-color: #121212;
+    color: #c1c1c1;
+    margin-bottom: 40px;
+}
+
+.agents-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: #121212;
+    justify-content: center;
+}
+
+.agent-card {
+    background-color: #121212;
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.agent-card:hover {
+    transform: none;
+}
+
+.agent-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.agent-info h3 {
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-bottom: 5px;
+    background-color: #121212;
+}
+
+.specialty {
+    font-size: 0.9em;
+    color: #c5c5c5;
+    margin-bottom: 15px;
+    background-color: #121212;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.call-btn {
+    padding: 8px 15px;
+    background-color: #9C6644;
+    color: #fff;
+    font-size: 0.9em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.email-btn {
+    padding: 8px 30px;
+    background-color: #ffffff;
+    color: #989898;
+    font-size: 0.9em;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.email-btn:hover {
+    background-color: #ededed;
+}
+.call-btn:hover {
+    background-color: #7F5539;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .agents-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Why Choose Us Section */
+.why-choose-us {
+    background-color: #1F1F1F;
+    border-radius: 20px;
+    padding: 100px 20px;
+    text-align: center;
+    margin: 20px;
+}
+
+.why-choose-us h2 {
+    font-size: 3.2em;
+    color: #ffffff;
+    background-color: #1F1F1F;
+    margin-bottom: 20px;
+}
+
+.benefits-description {
+    font-size: 1.1em;
+    background-color: #1F1F1F;
+    color: #b3b3b3;
+    margin-bottom: 40px;
+}
+
+.benefits-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #1F1F1F;
+    gap: 20px;
+    justify-content: center;
+}
+
+.benefit-card {
+    background-color: #121212;
+    width: 250px;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+}
+
+    .icon-container {
+        background-color: #121212;
+    font-size: 2.5em;
+    color: #7F5539;
+    margin-bottom: 15px;
+}
+
+.benefit-card h3 {
+    font-size: 1.2em;
+    color: #ffffff;
+    background-color: #121212;
+    margin-bottom: 10px;
+}
+
+.benefit-card p {
+    font-size: 0.9em;
+    color: #b3b3b3;
+    background-color: #121212;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .benefits-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FAQ Section */
+.faq-section {
+    background-color: #121212;
+    padding: 60px 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.faq-section h2 {
+    font-size: 3.2em;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: auto;
+    text-align: left;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 15px;
+    background-color: #121212;
+    color: #ffffff;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    position: relative;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.faq-icon {
+    font-weight: bold;
+    color: #9C6644;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    padding: 15px;
+    background-color: #121212;
+    border-radius: 5px;
+    color: #ffffff;
+    display: none;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+/* Newsletter Signup */
+.newsletter-signup {
+    background-color: #1F1F1F;
+    border-radius: 20px;
+    padding: 60px 20px;
+    text-align: center;
+    margin: 20px;
+}
+
+.newsletter-signup h2 {
+    font-size: 3.2em;
+    color: #ffffff;
+    background-color: #1F1F1F;
+    margin-bottom: 10px;
+}
+
+.newsletter-signup p {
+    font-size: 1.1em;
+    background-color: #1F1F1F;
+    color: #eeeeee;
+    margin-bottom: 30px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1F1F1F;
+}
+
+.signup-form input[type="email"] {
+    padding: 15px;
+    width: 100%;
+    background-color: #1F1F1F;
+    max-width: 400px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.signup-form button {
+    padding: 15px 30px;
+    background-color: #533623;
+    color: #ffffff;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signup-form button:hover {
+    background-color: #392518;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .faq-container {
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <!-- Brand Logo -->
+        <div class="navbar-brand">
+            <a href="index.html">
+                <img src="logo.png" alt="Real Estate Logo">
+            </a>
+        </div>
+    
+        <!-- Desktop Navigation Links -->
+        <nav class="navbar-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="listing.html">Listings</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="testimonial.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    
+        <!-- Hamburger Icon for Mobile Menu -->
+        <div class="navbar-menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    
+        <!-- Mobile Menu with Overlay -->
+        <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+                <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+                <li><a href="listing.html" onclick="toggleMenu()">Listings</a></li>
+                <li><a href="process.html" onclick="toggleMenu()">Process</a></li>
+                <li><a href="blog.html" onclick="toggleMenu()">Blog</a></li>
+                <li><a href="testimonial.html" onclick="toggleMenu()">Testimonials</a></li>
+                <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    
+
+
+    <section class="homebanner">
+        <video class="bg-video" autoplay loop muted playsinline>
+            <source src="1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>Your Dream Home Awaits</h1>
+            <p>Explore the best properties in prime locations. Find a home that fits your style and budget.</p>
+            <button class="cta-button">Start Your Search</button>
+        </div>
+    </section>
+    
+
+    <br><br>
+
+    <section class="highlight-wrapper">
+        <div class="highlight-section">
+            <div class="highlight-left">
+                <h2>Your Dream Property Awaits Dream Property Awaits</h2>
+            </div>
+            <div class="highlight-right">
+                <p>
+                    Discover a world of possibilities as you embark on your journey to find the perfect property. Our dedicated team is here to guide you every step of the way, whether you're a first-time buyer, seasoned investor, or looking for a vacation retreat. With our extensive listings and personalized approach, we make it easy to explore properties that match your lifestyle and budget. Imagine the possibilities as you tour homes, envision your future, and find a place that feels truly yours. Your dream property awaits – let us help make it a reality.
+                </p>
+                
+            </div>
+        </div>
+    </section>
+    
+    
+    
+<br><br>
+
+<section class="homefeature">
+    <h2>Featured Listings</h2>
+    <p class="section-tagline">Discover homes that inspire, with spaces designed for modern living and endless possibilities.</p>
+
+    <div class="card-container">
+        <!-- Card 1 -->
+        <div class="property-card">
+            <img src="https://images.squarespace-cdn.com/content/v1/5c2ac81b3c3a53368709c177/1563067823084-MEF03ONQDR7PBE1TMWHA/Dunphy-House-from-Modern-Family-Claire-Phil-by-Live-the-Movies.jpg" alt="Property Image 1" class="property-image">
+            <div class="property-info">
+                <h3>Modern Family Home</h3>
+                <p class="location">Los Angeles, CA</p>
+                <p class="price">$500,000</p>
+                <p class="description">A beautiful, modern home with spacious rooms and a stunning garden.</p>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="property-card">
+            <img src="https://img.freepik.com/premium-photo/modern-luxury-apartment-living-room-with-stunning-city-view_605022-35692.jpg" alt="Property Image 2" class="property-image">
+            <div class="property-info">
+                <h3>Luxury Apartment</h3>
+                <p class="location">New York, NY</p>
+                <p class="price">$1,200,000</p>
+                <p class="description">An elegant apartment in the heart of the city with breathtaking views.</p>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="property-card">
+            <img src="https://media.istockphoto.com/id/1415886888/photo/freshly-painted-craftsman-bungalow-house.jpg?s=612x612&w=0&k=20&c=uzf_2Zl4MPpvE8J8PzJeJLaXqyyXpOP1YvWsUbpns5g=" alt="Property Image 3" class="property-image">
+            <div class="property-info">
+                <h3>Cozy Suburban House</h3>
+                <p class="location">Austin, TX</p>
+                <p class="price">$350,000</p>
+                <p class="description">A cozy house with a warm interior and a great neighborhood.</p>
+                <button class="view-details">View Details</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br><br>
+
+<section class="homeproperty">
+    <h2>Explore Property Categories</h2>
+    <p class="section-tagline">Explore diverse property categories tailored to your lifestyle, from cozy homes to dynamic commercial spaces.</p>
+    <div class="category-container">
+        <!-- Category 1: Residential -->
+        <div class="category-card">
+            <img src="https://cedreo.com/wp-content/uploads/cloudinary/Visuel_AllHands_2022-04-22_JOUR_554px_prml8g.jpg" alt="Residential Properties" class="category-image">
+            <div class="category-info">
+                <h3>Residential</h3>
+                <p>Find your ideal home in our wide range of residential properties.</p>
+            </div>
+        </div>
+        <!-- Category 2: Commercial -->
+        <div class="category-card">
+            <img src="https://www.resmanagement.in/img/blog/commercial-properties-in-ahemedabad-res-management.webp" alt="Commercial Properties" class="category-image">
+            <div class="category-info">
+                <h3>Commercial</h3>
+                <p>Discover prime commercial spaces for your business needs.</p>
+            </div>
+        </div>
+        <!-- Category 3: Rental -->
+        <div class="category-card">
+            <img src="https://photos.zillowstatic.com/fp/22f9839908bd958473bad38bdd5421f0-p_e.jpg" alt="Rental Properties" class="category-image">
+            <div class="category-info">
+                <h3>Rental</h3>
+                <p>Browse rental properties for flexible living solutions.</p>
+            </div>
+        </div>
+        <!-- Category 4: Luxury -->
+        <div class="category-card">
+            <img src="https://urbando.in/wp-content/uploads/2023/12/luxurious-villas-in-Siruseri-626x445.jpg" alt="Luxury Properties" class="category-image">
+            <div class="category-info">
+                <h3>Luxury</h3>
+                <p>Indulge in high-end luxury properties for an lavish lifestyle.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br><br>
+
+<section class="homeabout">
+    <div class="about-container">
+        <h2>About Us</h2>
+        <p class="about-description">
+            At <strong>Cartographer Realty</strong>, we are dedicated to helping you find the perfect property to suit your needs. With years of experience in the real estate industry, we pride ourselves on our commitment to quality service, trust, and expertise.
+        </p>
+        <div class="about-content">
+            <p>
+                Our mission is to make the home-buying and selling process as smooth as possible. Whether you're looking for a new family home, a commercial space, or a rental, we have a team of dedicated agents ready to assist you every step of the way. Our values of integrity, transparency, and dedication drive us to deliver a seamless experience for every client.
+            </p>
+            <p>
+                Join our ever-growing family of satisfied clients and experience real estate like never before.
+            </p>
+        </div>
+        <div class="about-stats">
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>Properties Sold</p>
+            </div>
+            <div class="stat-item">
+                <h3>10+</h3>
+                <p>Years of Experience</p>
+            </div>
+            <div class="stat-item">
+                <h3>200+</h3>
+                <p>Happy Clients</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br><br>
+
+<section class="home-how-it-works">
+    <h2>How It Works</h2>
+    <p class="how-description">Our streamlined process makes it easy for buyers, sellers, and renters to navigate the real estate journey. Follow these simple steps to get started.</p>
+    <div class="steps-container">
+        <!-- Step 1: Contact an Agent -->
+        <div class="step-card">
+            <div class="step-icon">📞</div>
+            <h3>Contact an Agent</h3>
+            <p>Get in touch with our experienced agents who will guide you through your options and help you get started.</p>
+        </div>
+        <!-- Step 2: Browse Properties -->
+        <div class="step-card">
+            <div class="step-icon">🏠</div>
+            <h3>Browse Properties</h3>
+            <p>Explore our extensive list of properties to find one that matches your criteria and preferences.</p>
+        </div>
+        <!-- Step 3: Schedule a Visit -->
+        <div class="step-card">
+            <div class="step-icon">📅</div>
+            <h3>Schedule a Visit</h3>
+            <p>See the properties in person by scheduling a visit at your convenience to find the perfect fit.</p>
+        </div>
+        <!-- Step 4: Apply for Financing -->
+        <div class="step-card">
+            <div class="step-icon">💵</div>
+            <h3>Apply for Financing</h3>
+            <p>We assist with financing options to make your dream property more accessible.</p>
+        </div>
+        <!-- Step 5: Close the Deal -->
+        <div class="step-card">
+            <div class="step-icon">✅</div>
+            <h3>Close the Deal</h3>
+            <p>Finalize the paperwork and make your new property official!</p>
+        </div>
+    </div>
+</section>
+
+<br><br>
+
+<section class="testimonials">
+    <h2>Customer Testimonials</h2>
+    <p class="testimonial-description">Hear what our satisfied clients have to say about their experiences with us.</p>
+    <div class="testimonial-cards">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card">
+            <img src="https://media.istockphoto.com/id/1435745704/photo/portrait-of-smiling-mid-adult-businessman-standing-at-corporate-office.jpg?s=612x612&w=0&k=20&c=NtTebZxpAfw964hJJut8WFa__eZEfO07CAKdqeFBrFU=" alt="Client Photo" class="client-photo">
+            <blockquote>"The team at Cartographer Realty made buying our first home a breeze! They were professional, attentive, and truly cared about our needs."</blockquote>
+            <p class="client-name">- Elijah Walker</p>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card">
+            <img src="https://t3.ftcdn.net/jpg/06/27/65/72/360_F_627657216_Z3lwjvz1ERj822QFcPXYfrsBraJ7F4mJ.jpg" alt="Client Photo" class="client-photo">
+            <blockquote>"Thanks to their expert advice, I was able to sell my property quickly and above the asking price. Highly recommend!"</blockquote>
+            <p class="client-name">- Amelia Gray</p>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card">
+            <img src="https://media.istockphoto.com/id/513059232/photo/handsome-businessman-looking-at-camera-with-arms-crossed.jpg?s=612x612&w=0&k=20&c=8L-f-hipkaAB0VoAuD9jmqmTOzhH_N7wpwqedGlyxjk=" alt="Client Photo" class="client-photo">
+            <blockquote>"Excellent service from start to finish. The agents were friendly, knowledgeable, and went above and beyond."</blockquote>
+            <p class="client-name">- Michael Lee</p>
+        </div>
+    </div>
+    <a href="testimonial.html" class="view-more-btn">View More</a>
+</section>
+
+<br><br>
+
+<section class="popular-cities">
+    <h2>Popular Cities</h2>
+    <p class="cities-description">Explore some of the most sought-after areas with properties that fit your lifestyle and budget.</p>
+    <div class="cities-container">
+        <!-- City Card 1 -->
+        <div class="city-card">
+            <img src="https://media.architecturaldigest.com/photos/5da74823d599ec0008227ea8/16:9/w_2560%2Cc_limit/GettyImages-946087016.jpg" alt="City 1" class="city-image">
+            <div class="city-overlay">
+                <h3>New York</h3>
+                <p>Discover luxury apartments and vibrant neighborhoods.</p>
+                <a href="#new-york-listings" class="view-listings-btn">View Listings</a>
+            </div>
+        </div>
+        <!-- City Card 2 -->
+        <div class="city-card">
+            <img src="https://cdn.britannica.com/40/94540-050-789B2064/Palm-trees-skyline-Los-Angeles-background.jpg" alt="City 2" class="city-image">
+            <div class="city-overlay">
+                <h3>Los Angeles</h3>
+                <p>Live the dream in the city of stars and sunshine.</p>
+                <a href="#la-listings" class="view-listings-btn">View Listings</a>
+            </div>
+        </div>
+        <!-- City Card 3 -->
+        <div class="city-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Chicago_River_ferry_b.jpg" alt="City 3" class="city-image">
+            <div class="city-overlay">
+                <h3>Chicago</h3>
+                <p>Find stunning properties in the heart of the Midwest.</p>
+                <a href="#chicago-listings" class="view-listings-btn">View Listings</a>
+            </div>
+        </div>
+        <!-- City Card 4 -->
+        <div class="city-card">
+            <img src="https://a.travel-assets.com/findyours-php/viewfinder/images/res70/471000/471674-Miami.jpg" alt="City 4" class="city-image">
+            <div class="city-overlay">
+                <h3>Miami</h3>
+                <p>Enjoy waterfront living and year-round sunshine.</p>
+                <a href="#miami-listings" class="view-listings-btn">View Listings</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br><br>
+
+<section class="agents-brokers">
+    <h2>Meet Our Agents & Brokers</h2>
+    <p class="agents-description">Connect with our experienced professionals who are here to help you find the perfect property.</p>
+    <div class="agents-container">
+        <!-- Agent Card 1 -->
+        <div class="agent-card">
+            <img src="https://ssl.cdn-redfin.com/system_files/images/31182/640x460/6_9.jpg" alt="Agent 1" class="agent-photo">
+            <div class="agent-info">
+                <h3>Emily Richards</h3>
+                <p class="specialty">Luxury Real Estate Specialist</p>
+                <div class="contact-buttons">
+                    <a href="mailto:emily.richards@gmail.com" class="email-btn">Email ID</a>
+                    <a href="tel:+1234567890" class="call-btn">Call</a>
+                </div>
+            </div>
+        </div>
+        <!-- Agent Card 2 -->
+        <div class="agent-card">
+            <img src="https://media.licdn.com/dms/image/v2/C5603AQHUYkPYdmamCg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1620429393168?e=2147483647&v=beta&t=ZZFDVvy15IRVoLh1cma2paoEPqsyeBfzhtlazxFl6C8" alt="Agent 2" class="agent-photo">
+            <div class="agent-info">
+                <h3>James Wong</h3>
+                <p class="specialty">Commercial Property Expert</p>
+                <div class="contact-buttons">
+                    <a href="mailto:james.wong@gmail.com" class="email-btn">Email ID</a>
+                    <a href="tel:+1234567890" class="call-btn">Call</a>
+                </div>
+            </div>
+        </div>
+        <!-- Agent Card 3 -->
+        <div class="agent-card">
+            <img src="https://photos.zillowstatic.com/fp/2fbc57a33f2e60a01cea3ddd055b8ca0-h_l.jpg" alt="Agent 3" class="agent-photo">
+            <div class="agent-info">
+                <h3>Isabella Perry</h3>
+                <p class="specialty">Residential Property Advisor</p>
+                <div class="contact-buttons">
+                    <a href="mailto:isabella.perry@gmail.com" class="email-btn">Email ID</a>
+                    <a href="tel:+1234567890" class="call-btn">Call</a>
+                </div>
+            </div>
+        </div>
+        <!-- Agent Card 3 -->
+        <div class="agent-card">
+            <img src="https://pbs.twimg.com/profile_images/1634279872729174019/nromvK0D_400x400.jpg" alt="Agent 1" class="agent-photo">
+            <div class="agent-info">
+                <h3>Angela Carter</h3>
+                <p class="specialty">Luxury Property Specialist</p>
+                <div class="contact-buttons">
+                    <a href="mailto:angela.carter@gmail.com" class="email-btn">Email ID</a>
+                    <a href="tel:+1234567891" class="call-btn">Call</a>
+                </div>
+            </div>
+        </div>
+        <!-- Agent Card 3 -->
+        <div class="agent-card">
+            <img src="https://pbs.twimg.com/profile_images/1463280649725366274/K1ddtc_K_400x400.jpg" alt="Agent 3" class="agent-photo">
+            <div class="agent-info">
+                <h3>Peter Smith</h3>
+                <p class="specialty">Residential Property Advisor</p>
+                <div class="contact-buttons">
+                    <a href="mailto:peter.smith@gmail.com" class="email-btn">Email ID</a>
+                    <a href="tel:+1234567893" class="call-btn">Call</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br><br>
+
+<section class="why-choose-us">
+    <h2>Why Choose Us</h2>
+    <p class="benefits-description">Explore the reasons why our clients trust us to help them find the perfect property.</p>
+    <div class="benefits-container">
+        <!-- Benefit 1 -->
+        <div class="benefit-card">
+            <div class="icon-container">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Trusted Reputation</h3>
+            <p>Years of experience and a proven track record make us the preferred choice for clients seeking reliable real estate services.</p>
+        </div>
+        <!-- Benefit 2 -->
+        <div class="benefit-card">
+            <div class="icon-container">
+                <i class="fas fa-home"></i>
+            </div>
+            <h3>Extensive Property Database</h3>
+            <p>Access a vast selection of properties, from cozy apartments to luxurious villas, tailored to fit every preference and budget.</p>
+        </div>
+        <!-- Benefit 3 -->
+        <div class="benefit-card">
+            <div class="icon-container">
+                <i class="fas fa-headset"></i>
+            </div>
+            <h3>Exceptional Customer Support</h3>
+            <p>Our dedicated support team is here to guide you at every step, ensuring a seamless and satisfying experience.</p>
+        </div>
+    </div>
+</section>
+
+<br><br>
+
+<section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="faq-item">
+            <button class="faq-question">What is the process of buying a property?<span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+                <p>Buying a property involves initial consultations, property viewings, price negotiation, and the final contract signing. Our agents guide you at every step.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">How can I list my property for sale?<span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+                <p>Simply contact us, and our team will assist you with property valuation, listing, and marketing to ensure maximum visibility and offers.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question">What fees are involved in renting a property?<span class="faq-icon">+</span></button>
+            <div class="faq-answer">
+                <p>Rental fees can include a security deposit, monthly rent, and a one-time service fee. Contact us for more information on rental agreements.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br><br>
+
+<section class="newsletter-signup">
+    <h2>Stay Updated</h2>
+    <p>Subscribe to our newsletter for the latest property updates, market insights, and exclusive offers.</p>
+    <form class="signup-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+    </form>
+</section>
+
+<br><br>
+    
+
+<br><br>
+
+<footer class="footer">
+    <div class="footer-overlay">
+        <div class="footer-content">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+                <img src="8.png" alt="Company Logo" class="footer-logo">
+                <h2>Cartographer Realty</h2>
+                <p>Your gateway to finding exceptional properties. Discover unique listings and investment opportunities tailored just for you.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Links Section -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="listing.html">Listing</a></li>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="testimonial.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info Section -->
+            <div class="footer-contact">
+                <h3>Get In Touch</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 1234 Elm Street, Springfield, IL 62704</p>
+                <p><i class="fas fa-phone-alt"></i> (123) 456-7890</p>
+                <p><i class="fas fa-envelope"></i> info@cartographerrealty.com</p>
+            </div>
+
+            <!-- Newsletter Section -->
+            <div class="footer-newsletter">
+                <h3>Stay Connected</h3>
+                <p>Subscribe to our newsletter for the latest property listings, market insights, and exclusive offers.</p>
+                <form action="#">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Cartographer Realty. All rights reserved. | <a href="#privacy">Privacy Policy</a></p>
+        </div>
+    </div>
+</footer>
+
+
+
+<script>
+
+    function toggleMenu() {
+        const mobileMenu = document.getElementById("mobileMenu");
+        const mobileOverlay = document.getElementById("mobileOverlay");
+        mobileMenu.classList.toggle("open");
+        mobileOverlay.classList.toggle("open");
+    }
+    
+
+
+    document.querySelector('.search-button').addEventListener('click', (event) => {
+        event.preventDefault();
+        const searchButton = event.target;
+        searchButton.classList.add('active');
+        setTimeout(() => searchButton.classList.remove('active'), 200);
+    });
+
+// FAQ Toggle Script
+    document.querySelectorAll('.faq-question').forEach((button) => {
+        button.addEventListener('click', () => {
+            const faqItem = button.parentElement;
+            const faqAnswer = faqItem.querySelector('.faq-answer');
+            
+            // Toggle visibility
+            faqItem.classList.toggle('active');
+
+            // Change icon
+            const icon = button.querySelector('.faq-icon');
+            icon.textContent = faqItem.classList.contains('active') ? '-' : '+';
+        });
+    });
+
+    function toggleSwitch() {
+        const toggleButton = document.querySelector('.toggle-button');
+        toggleButton.classList.toggle('toggle-on');
+    }
+</script>
+
+</body>
+</html>

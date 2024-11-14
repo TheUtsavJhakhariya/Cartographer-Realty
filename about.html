@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>About Us - Company Overview</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            background-color: #121212;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Poppins';
+        }
+
+
+
+
+
+
+
+
+/* Navbar Container */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: #1e1e1e;
+    color: #fff;
+    margin: 20px;
+    border-radius: 10px;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* Brand Logo */
+.navbar-brand img {
+    max-height: 80px;
+    width: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+    transform: none;
+}
+
+/* Desktop Navigation Links */
+.navbar-links {
+    margin-right: 20px;
+    padding: 20px;
+    background-color: transparent;
+}
+
+.navbar-links ul {
+    list-style: none;
+    display: flex;
+    background-color: transparent;
+    gap: 35px;
+}
+
+.navbar-links ul li {
+    position: relative;
+    background-color: transparent;
+}
+
+.navbar-links ul li a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    background-color: transparent;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-links ul li a:hover {
+    color: #ff6f61;
+}
+
+.navbar-links ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ff6f61;
+    transition: width 0.3s ease;
+}
+
+.navbar-links ul li a:hover::after {
+    width: 100%;
+}
+
+/* Mobile Menu Icon */
+.navbar-menu-icon {
+    display: none;
+    font-size: 1.8em;
+    color: #9C6644;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navbar-menu-icon:hover {
+    color: #ff6f61;
+}
+
+/* Mobile Menu and Overlay */
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    z-index: 90;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-overlay.open {
+    display: block;
+    opacity: 1;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 270px;
+    height: 100vh;
+    background: #1e1e1e;
+    color: #fff;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-menu.open {
+    transform: translateX(0);
+}
+
+.mobile-menu ul {
+    list-style: none;
+    text-align: center;
+}
+
+.mobile-menu ul li {
+    margin: 20px 0;
+}
+
+.mobile-menu ul li a {
+    color: #ddd;
+    font-size: 1.3em;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu ul li a:hover {
+    color: #ff6f61;
+}
+
+/* Smooth Open Animation */
+.mobile-menu.open ul li {
+    animation: slideIn 0.5s ease forwards;
+}
+
+/* Keyframes for Slide Animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Styling for Mobile */
+@media (max-width: 426px) {
+    .navbar-links {
+        display: none;
+    }
+    .navbar-menu-icon {
+        display: block;
+    }
+
+    .navbar-brand img {
+        max-height: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+    }
+    .navbar-menu-icon {
+        display: block;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+    background: url('6.png') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    padding: 40px 20px;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.632); /* Darker overlay for readability */
+    z-index: 1;
+}
+
+.footer-overlay, .footer-links, .footer-contact, .footer-newsletter {
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    background-color: rgba(255, 0, 0, 0); /* Transparent background for content box */
+    border-radius: 10px;
+}
+
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 15px;
+
+}
+
+.footer-brand {
+    flex: 1;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.footer-brand img {
+    max-width: 60%;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.footer-brand h2 {
+    font-size: 1.8em;
+    color: #fff;
+    margin-bottom: 10px;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.footer-brand p {
+    font-size: 0.95em;
+    line-height: 1.5;
+    background-color: transparent;
+}
+
+.social-icons {
+    margin-top: 15px;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.social-icons a {
+    font-size: 1.5em;
+    background-color: rgba(255, 0, 0, 0);
+    color: #fff;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #9C6644;
+}
+
+.footer-links h3, .footer-contact h3, .footer-newsletter h3 {
+    color: #fff;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.footer-newsletter p {
+    background-color: rgba(255, 0, 0, 0);
+    margin: 5px 0;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    background-color: rgba(255, 0, 0, 0);
+    margin: 0;
+}
+
+.footer-links ul li {
+    margin: 8px 0;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    background-color: rgba(255, 0, 0, 0); 
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #9C6644;
+}
+
+.footer-contact p {
+    color: #fff;
+    background-color: rgba(255, 0, 0, 0); 
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact p i {
+    margin-right: 10px;
+    color: #9C6644;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-newsletter form {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-newsletter input[type="email"] {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1em;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-newsletter button {
+    padding: 10px 20px;
+    background-color: #9C6644;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer-newsletter button:hover {
+    background-color: #fff;
+    color: #9C6644;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 0.9em;
+    background-color: rgba(255, 0, 0, 0); 
+    color: #ccc;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 2;
+}
+
+.footer-bottom a {
+    color: #9C6644;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-bottom p {
+    
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+.footer-bottom a:hover {
+    color: #fff;
+    background-color: rgba(255, 0, 0, 0); 
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+    .footer-brand, .footer-links, .footer-contact, .footer-newsletter {
+        margin: 10px 0;
+    }
+
+    .footer-brand img {
+        max-width: 70%;
+        background-color: rgba(255, 0, 0, 0);
+    }
+}
+
+@media (max-width: 426px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+    }
+    .footer-brand, .footer-links, .footer-contact, .footer-newsletter {
+        margin: 10px 0;
+    }
+
+    .footer-brand img {
+        max-width: 100%;
+        background-color: rgba(255, 0, 0, 0);
+    }
+}
+
+
+
+
+
+
+
+        
+        .company-overview {
+            background-color: #121212;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 8px;
+            max-width: 70%;
+            margin: 20px auto;
+        }
+        
+        .overview-content h2 {
+            font-size: 3.2em;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        
+        .intro, .mission, .difference {
+            font-size: 1.1em;
+            color: #cacaca;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        h3 {
+            font-size: 1.8em;
+            color: #ffffff;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        
+        .values-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .values-list li {
+            font-size: 1em;
+            color: #bdbdbd;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        .values-list strong {
+            color: #D9A77D;
+        }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+.p-tagline-tag{
+
+    color: #ffffff;
+    background-color: #12121200;
+    margin-top: -10px;
+    margin-bottom: 30px;
+}
+
+
+
+        .mission-vision-section {
+            background-color: #1F1F1F;
+            padding: 100px 20px;
+            text-align: center;
+            margin: 20px;
+            border-radius: 20px;
+        }
+        
+        .mission-vision-section h2 {
+            font-size: 3.2em;
+            color: #ffffff;
+            background-color: #1F1F1F;
+            margin-bottom: 20px;
+        }
+        
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            background-color: #1F1F1F;
+            justify-content: center;
+        }
+        
+        .card {
+            background-color: #121212;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 380px;
+            width: 100%;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card h3 {
+            font-size: 1.8em;
+            color: #7F5539;
+            margin-bottom: 15px;
+        }
+        
+        .card p {
+            font-size: 1em;
+            color: #aeaeae;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        
+        .card ul li {
+            font-size: 0.95em;
+            color: #bdbdbd;
+            margin-bottom: 8px;
+        }
+        
+        .card ul li strong {
+            color: #D9A77D;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .meet-the-team {
+            background-color: #121212;
+            padding: 100px 20px;
+            text-align: center;
+            max-width: 100%;
+            margin: 20px auto;
+            border-radius: 8px;
+        }
+        
+        .meet-the-team h2 {
+            font-size: 3.2em;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .team-card {
+            background-color: #1F1F1F;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 250px;
+            width: 100%;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .team-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+            background-color: #1F1F1F;
+            margin-bottom: 15px;
+        }
+        
+        .team-card h3 {
+            font-size: 1.5em;
+            color: #dedede;
+            background-color: #1F1F1F;
+            margin: 10px 0;
+        }
+        
+        .job-title {
+            font-size: 1em;
+            background-color: #1F1F1F;
+            color: #D9A77D;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .bio {
+            font-size: 0.95em;
+            color: #cccccc;
+            background-color: #1F1F1F;
+            line-height: 1.5;
+        }
+        
+        
+
+
+
+
+
+
+
+
+
+
+        .community-section {
+            background-color: #1F1F1F;
+            padding: 100px 20px;
+            text-align: center;
+            border-radius: 20px;
+            margin: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .community-section h2 {
+            font-size: 3.2em;
+            color: #ffffff;
+            margin-bottom: 20px;
+            background-color: #1F1F1F;
+        }
+        
+        .community-content {
+            background-color: #1F1F1F;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            width: 100%;
+        }
+        
+        .community-card {
+            background-color: #121212;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            width: 100%;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .community-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .community-card .ptagline{
+            font-size: 1.5em;
+            color: #fff;
+        }
+        
+        .community-card h3 {
+            font-size: 1.8em;
+            color: #D9A77D;
+            margin-bottom: 10px;
+        }
+
+        .community-section .p-tagline{
+            color: #fff;
+            background-color: #1F1F1F;
+            padding-bottom: 30px;
+        }
+        
+        .community-card p {
+            font-size: 1em;
+            color: #aeaeae;
+            line-height: 1.6;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .awards-section {
+            background-color: #1F1F1F;
+            padding: 100px 20px;
+            text-align: center;
+            border-radius: 20px;
+            margin: 20px;
+        }
+        
+        .awards-section h2 {
+            font-size: 3.2em;
+            color: #ffffff;
+            background-color: #1F1F1F;
+            margin-bottom: 20px;
+        }
+        
+        .awards-section .ptagline{
+            font-size: 1em;
+            color: #ffffff;
+            background-color: #1F1F1F;
+            margin-bottom: 30px;
+        }
+        .awards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            background-color: #1F1F1F;
+            width: 100%;
+        }
+        
+        .award-card {
+            background-color: #121212;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            width: 100%;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .award-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .award-card h3 {
+            font-size: 1.5em;
+            color: #D9A77D;
+            background-color: #121212;
+            margin-bottom: 10px;
+        }
+        
+        .award-card p {
+            font-size: 1em;
+            background-color: #121212;
+            color: #c2c2c2;
+            line-height: 1.6;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        .company-culture {
+            background-color: #121212;
+            padding: 100px 20px;
+            text-align: center;
+            width: 100%;
+            margin: 20px auto;
+        }
+        
+        .company-culture h2 {
+            font-size: 3.2em;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        
+        .culture-description {
+            font-size: 1.1em;
+            color: #ffffff;
+            max-width: 800px;
+            margin: 20px auto;
+            line-height: 1.6;
+        }
+        
+        .culture-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            width: 100%;
+        }
+        
+        .culture-card {
+            background-color: #1F1F1F;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            width: 100%;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .culture-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .culture-image {
+            width: 100%;
+            height: 200px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        
+        .culture-card h3 {
+            font-size: 1.5em;
+            background-color: #1F1F1F;
+            color: #D9A77D;
+            margin-bottom: 10px;
+        }
+        
+        .culture-card p {
+            font-size: 1em;
+            background-color: #1F1F1F;
+            color: #c1c1c1;
+            line-height: 1.6;
+        }
+        
+        .employee-quotes {
+            margin-top: 40px;
+            background-color: #121212;
+        }
+        
+        .employee-quotes h3 {
+            font-size: 3.2em;
+            background-color: #121212;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        
+        .quote {
+            background-color: #1F1F1F;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            margin: 10px auto;
+            text-align: left;
+        }
+        
+        .quote p {
+            font-size: 1em;
+            color: #e9e9e9;
+            line-height: 1.6;
+            background-color: #1F1F1F;
+            margin: 0;
+        }
+        
+        .employee-name {
+            background-color: #1F1F1F;
+            font-weight: bold;
+            color: #D9A77D;
+            margin-top: 10px;
+        }
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        .careers-section {
+            background-color: #121212;
+            padding: 100px 20px;
+            text-align: center;
+            width: 100%;
+            margin: 20px auto;
+        }
+        
+        .careers-section h2 {
+            font-size: 3.2em;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        
+        .careers-intro {
+            font-size: 1.1em;
+            color: #c5c5c5;
+            padding-bottom: 50px;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .job-listings {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            width: 100%;
+        }
+        
+        .job-card {
+            background-color: #1F1F1F;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            width: 100%;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .job-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .job-card h3 {
+            font-size: 1.5em;
+            background-color: #1F1F1F;
+            color: #D9A77D;
+            margin-bottom: 10px;
+        }
+        
+        .job-card p {
+            font-size: 1em;
+            color: #b5b5b5;
+            background-color: #1F1F1F;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .apply-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #D9A77D;
+            color: #ffffff;
+            font-size: 1em;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .apply-button:hover {
+            background-color: #7F5539;
+        }
+        
+        .view-all-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            color: #ffffff;
+            background-color: #D9A77D;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .view-all-button:hover {
+            background-color: #7F5539;
+        }
+        
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <!-- Brand Logo -->
+        <div class="navbar-brand">
+            <a href="index.html">
+                <img src="logo.png" alt="Real Estate Logo">
+            </a>
+        </div>
+    
+        <!-- Desktop Navigation Links -->
+        <nav class="navbar-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="listing.html">Listings</a></li>
+                <li><a href="process.html">Process</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="testimonial.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    
+        <!-- Hamburger Icon for Mobile Menu -->
+        <div class="navbar-menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    
+        <!-- Mobile Menu with Overlay -->
+        <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html" onclick="toggleMenu()">Home</a></li>
+                <li><a href="about.html" onclick="toggleMenu()">About</a></li>
+                <li><a href="listing.html" onclick="toggleMenu()">Listings</a></li>
+                <li><a href="process.html" onclick="toggleMenu()">Process</a></li>
+                <li><a href="blog.html" onclick="toggleMenu()">Blog</a></li>
+                <li><a href="testimonial.html" onclick="toggleMenu()">Testimonials</a></li>
+                <li><a href="contact.html" onclick="toggleMenu()">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <br><br>
+
+    <section class="company-overview">
+        <div class="overview-content">
+            <h2>About Our Company</h2>
+            <p class="intro">Founded with a passion for excellence, our company has been dedicated to providing outstanding services and solutions for over a decade. Our journey began with a commitment to make a positive impact on our community and industry.</p>
+            <h3>Our Mission</h3>
+            <p class="mission">To empower our clients with trusted services that make a meaningful difference in their lives and businesses. We aim to innovate, inspire, and lead by example in everything we do.</p>
+            <h3>Core Values</h3>
+            <ul class="values-list">
+                <li><strong>Integrity:</strong> We build trust through transparency and honesty in all interactions.</li>
+                <li><strong>Excellence:</strong> Our commitment to quality drives every decision and action we take.</li>
+                <li><strong>Innovation:</strong> We embrace change and constantly seek new ways to improve our services.</li>
+                <li><strong>Customer Focus:</strong> The needs and satisfaction of our clients always come first.</li>
+            </ul>
+            <h3>Why Choose Us?</h3>
+            <p class="difference">What sets us apart is our unwavering dedication to personalized service, our experienced team, and our forward-thinking approach. We continuously strive to exceed client expectations and deliver value-driven results.</p>
+        </div>
+    </section>
+
+    <br><br>
+
+    <section class="mission-vision-section">
+        <h2>Our Mission & Vision</h2>
+        <p class="p-tagline-tag">Guided by purpose, driven by excellence – our journey to transform lives through real estate.</p>
+
+        <div class="cards-container">
+            <div class="card">
+                <h3>Our Mission</h3>
+                <p>To deliver exceptional service and innovative solutions that empower our clients and exceed their expectations. Our commitment is to integrity, excellence, and building lasting relationships with our customers and partners.</p>
+            </div>
+            <div class="card">
+                <h3>Our Vision</h3>
+                <p>To be a leader in our industry, known for our dedication to customer success, sustainability, and continuous improvement. We strive to create a positive impact on our community and the environment through responsible business practices.</p>
+            </div>
+            <div class="card">
+                <h3>Our Goals</h3>
+                <ul>
+                    <li><strong>Customer Service:</strong> Ensure a seamless, supportive experience for every client.</li>
+                    <li><strong>Sustainability:</strong> Implement eco-friendly practices to minimize our environmental footprint.</li>
+                    <li><strong>Community Involvement:</strong> Actively support and invest in local initiatives and social causes.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <br><br>
+
+    <section class="meet-the-team">
+        <h2>Meet the Team</h2>
+        <p class="p-tagline-tag">Passionate professionals, united in bringing you a world-class real estate experience.</p>
+
+        <div class="team-container">
+            <div class="team-card">
+                <img src="https://www.tvinsider.com/wp-content/uploads/2024/10/dune-prophecy-nycc-olivia-williams-234x155.jpg" alt="Team Member 1" class="team-photo">
+                <h3>Olivia Williams</h3>
+                <p class="job-title">Senior Real Estate Agent</p>
+                <p class="bio">With over 10 years in the industry, Emily specializes in residential real estate and is dedicated to finding perfect homes for her clients.</p>
+            </div>
+            <div class="team-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3YPEOK4lt3i7QeunWCSBm_IVXOew4eBU9fw&s" alt="Team Member 2" class="team-photo">
+                <h3>Sean Yang</h3>
+                <p class="job-title">Commercial Property Expert</p>
+                <p class="bio">James brings expertise in commercial property sales and leasing, helping businesses find ideal locations to thrive and grow.</p>
+            </div>
+            <div class="team-card">
+                <img src="https://www.thebestsmilesdentistry.com/client/images/amina-singh2.jpg" alt="Team Member 3" class="team-photo">
+                <h3>Amina Singh</h3>
+                <p class="job-title">Residential Property Advisor</p>
+                <p class="bio">Sarah has a knack for understanding client needs, focusing on creating a seamless and enjoyable home-buying experience.</p>
+            </div>
+            <div class="team-card">
+                <img src="https://pbs.twimg.com/profile_images/1463280649725366274/K1ddtc_K_400x400.jpg" alt="Team Member 4" class="team-photo">
+                <h3>Jackson Thompson</h3>
+                <p class="job-title">Marketing & Client Relations</p>
+                <p class="bio">Michael’s experience in marketing helps ensure the best visibility for client properties and a high level of client engagement.</p>
+            </div>
+        </div>
+    </section>
+
+    <br><br>
+
+    <section class="community-section">
+        <h2>Community Involvement & Social Responsibility</h2>
+        <p class="p-tagline">Building better communities, one step at a time. We believe in giving back.</p>
+
+        <div class="community-content">
+            <div class="community-card">
+                <h3>Charity Work</h3>
+                <p>Our company regularly donates a portion of profits to local charities focused on housing and shelter programs. We partner with various non-profits to help provide safe homes and resources for those in need.</p>
+            </div>
+            <div class="community-card">
+                <h3>Environmental Initiatives</h3>
+                <p>We are committed to sustainable practices in our operations. From using eco-friendly materials to reducing energy consumption in our offices, we aim to minimize our environmental footprint.</p>
+            </div>
+            <div class="community-card">
+                <h3>Supporting Local Businesses</h3>
+                <p>As part of our community involvement, we collaborate with local businesses for events and community development projects. Supporting local entrepreneurs is central to our vision for a thriving community.</p>
+            </div>
+            <div class="community-card">
+                <h3>Volunteering Efforts</h3>
+                <p>Our team actively participates in volunteer programs throughout the year. We believe in giving back, whether it’s through organizing local clean-ups or assisting in building homes for families.</p>
+            </div>
+        </div>
+    </section>
+
+    <br><br>
+
+    <section class="company-culture">
+        <h2>Our Company Culture</h2>
+        <p class="culture-description">At our company, we foster a collaborative and supportive work environment where every team member’s voice is valued. Guided by principles of integrity, innovation, and growth, we empower our team to bring their best selves to work each day.</p>
+        
+        <div class="culture-container">
+            <div class="culture-card">
+                <img src="https://koala.sh/api/image/v2-9ruax-syqfx.jpg?width=1216&height=832&dream" alt="Team Collaboration" class="culture-image">
+                <h3>Collaboration</h3>
+                <p>We believe that teamwork is the foundation of our success. Our open-door policy and collaborative spirit allow us to tackle challenges and celebrate achievements together.</p>
+            </div>
+            
+            <div class="culture-card">
+                <img src="https://bsmedia.business-standard.com/_media/bs/img/article/2024-04/16/full/1713247624-3046.jpg?im=FeatureCrop,size=(826,465)" alt="Growth Opportunities" class="culture-image">
+                <h3>Growth</h3>
+                <p>We are committed to the personal and professional growth of our team members through continuous learning, mentorship programs, and ample growth opportunities.</p>
+            </div>
+            
+            <div class="culture-card">
+                <img src="https://informationage-production.s3.amazonaws.com/uploads/2022/10/qa-innovation-sustainability-real-estate.jpeg" alt="Innovation" class="culture-image">
+                <h3>Innovation</h3>
+                <p>Our team thrives on creativity and forward-thinking. We encourage everyone to contribute ideas that drive innovation, keeping us at the forefront of our industry.</p>
+            </div>
+        </div>
+    
+        <br><br><br><br>
+        <div class="employee-quotes">
+            <h3>What Our Team Says</h3>
+            <p class="p-tagline-tag">Hear from the people who make it all possible – in their own words.</p>
+
+            <div class="quote">
+                <p>"Working here has been an incredible experience. The support and encouragement to grow professionally is unmatched."</p>
+                <p class="employee-name">— Liam Martinez, Project Manager</p>
+            </div>
+            <div class="quote">
+                <p>"The emphasis on innovation and teamwork makes every day exciting. I love being part of a company that truly values its people."</p>
+                <p class="employee-name">— Sophia Collins, Marketing Specialist</p>
+            </div>
+        </div>
+    </section>
+
+    <br><br>
+
+    <section class="awards-section">
+        <h2>Awards & Recognitions</h2>
+        <p class="ptagline">Proudly recognized for excellence and innovation in the world of real estate.</p>
+
+        <div class="awards-container">
+            <div class="award-card">
+                <h3>Best Real Estate Agency 2023</h3>
+                <p>Awarded by the National Real Estate Association for outstanding service and customer satisfaction in 2023.</p>
+            </div>
+            <div class="award-card">
+                <h3>Green Business Certification</h3>
+                <p>Recognized for eco-friendly practices and sustainability efforts that help reduce our environmental impact.</p>
+            </div>
+            <div class="award-card">
+                <h3>Top 100 Industry Leaders</h3>
+                <p>Named among the top 100 leaders in the industry for innovation, trust, and excellence in service.</p>
+            </div>
+            <div class="award-card">
+                <h3>Customer Service Excellence Award</h3>
+                <p>Acknowledged for exceptional customer support and high client satisfaction ratings year after year.</p>
+            </div>
+        </div>
+    </section>
+
+    <br><br>
+
+    <section class="careers-section">
+        <h2>Join Our Team</h2>
+        <p class="careers-intro">We're always looking for passionate and talented individuals to join our team. If you're ready to make a difference and grow with us, explore our open positions below or visit our careers page to learn more.</p>
+        
+        <div class="job-listings">
+            <div class="job-card">
+                <h3>Senior Sales Manager</h3>
+                <p>Lead our sales team in delivering outstanding client service and achieving sales goals. Requires 5+ years of experience in sales management.</p>
+                <a href="#apply" class="apply-button">Apply Now</a>
+            </div>
+            
+            <div class="job-card">
+                <h3>Marketing Specialist</h3>
+                <p>Develop and implement innovative marketing strategies to enhance brand presence. Ideal candidates have a creative mindset and 3+ years of experience.</p>
+                <a href="#apply" class="apply-button">Apply Now</a>
+            </div>
+            
+            <div class="job-card">
+                <h3>Real Estate Agent</h3>
+                <p>Join our team of professional agents and help clients find their dream homes. Must have a real estate license and exceptional customer service skills.</p>
+                <a href="#apply" class="apply-button">Apply Now</a>
+            </div>
+            
+            <div class="job-card">
+                <h3>Customer Support Specialist</h3>
+                <p>Provide outstanding support to our clients and assist with their inquiries. Experience in customer service is preferred but not required.</p>
+                <a href="#apply" class="apply-button">Apply Now</a>
+            </div>
+        </div>
+    
+        <a href="/careers" class="view-all-button">View All Open Positions</a>
+    </section>
+    
+<br><br>
+
+<footer class="footer">
+    <div class="footer-overlay">
+        <div class="footer-content">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+                <img src="8.png" alt="Company Logo" class="footer-logo">
+                <h2>Cartographer Realty</h2>
+                <p>Your gateway to finding exceptional properties. Discover unique listings and investment opportunities tailored just for you.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Links Section -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="listing.html">Listing</a></li>
+                    <li><a href="process.html">Process</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="testimonial.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info Section -->
+            <div class="footer-contact">
+                <h3>Get In Touch</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 1234 Elm Street, Springfield, IL 62704</p>
+                <p><i class="fas fa-phone-alt"></i> (123) 456-7890</p>
+                <p><i class="fas fa-envelope"></i> info@cartographerrealty.com</p>
+            </div>
+
+            <!-- Newsletter Section -->
+            <div class="footer-newsletter">
+                <h3>Stay Connected</h3>
+                <p>Subscribe to our newsletter for the latest property listings, market insights, and exclusive offers.</p>
+                <form action="#">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Cartographer Realty. All rights reserved. | <a href="#privacy">Privacy Policy</a></p>
+        </div>
+    </div>
+</footer>
+    
+    
+    
+    
+<script>
+    // Toggle Mobile Menu
+function toggleMenu() {
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileOverlay = document.getElementById("mobileOverlay");
+    mobileMenu.classList.toggle("open");
+    mobileOverlay.classList.toggle("open");
+}
+
+</script>
+
+    
+</body>
+</html>
